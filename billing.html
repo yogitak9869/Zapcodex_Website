@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Working Process - IT Solutions & Services</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Blue Background Cursor Animation Circle -->
+    <div class="cursor-circle" id="cursorCircle"></div>
+
+   <!-- Black Navbar with White Text -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white fs-3" href="index.html">
+              Zapcodex Technology
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center fw-semibold">
+                    <li class="nav-item me-3">
+                        <a class="nav-link text-white active" href="index.html">Home</a>
+                    </li>
+                 
+                    <!-- Dropdown List with Hover Open/Close Behavior -->
+                    <li class="nav-item dropdown me-3" id="pageDropdownContainer">
+                        <a class="nav-link dropdown-toggle text-white active" href="pages.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Page
+                        </a>
+                        <ul class="dropdown-menu bg-white border-0 shadow" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-dark hover-primary" href="about.html"><i class="bi bi-info-circle me-2"></i>About Us</a></li>
+                            <li><a class="dropdown-item text-dark hover-primary" href="team.html"><i class="bi bi-people me-2"></i>Team</a></li>
+                            <li><a class="dropdown-item text-dark hover-primary" href="services.html"><i class="bi bi-gear me-2"></i>Services</a></li>
+                            <li><a class="dropdown-item text-dark hover-primary" href="portfolio.html"><i class="bi bi-briefcase me-2"></i>Portfolio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item me-3">
+                        <a class="nav-link text-white active" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link text-white active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary rounded-pill px-4 ms-lg-2">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .dropdown-menu .dropdown-item:hover, 
+        .dropdown-menu .dropdown-item:focus {
+            background-color: var(--bs-primary) !important;
+            color: #ffffff !important;
+        }
+
+        /* Enable hover dropdown behavior for large screens */
+        @media (min-width: 992px) {
+            #pageDropdownContainer:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
+    </style>
+    <!-- Custom Cursor Element -->
+<div 
+  id="customCursor" 
+  class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"
+  style="
+    width: 24px; 
+    height: 24px; 
+    top: 0; 
+    left: 0; 
+    z-index: 99999; 
+    transform: translate(-50%, -50%); 
+    transition: transform 0.15s ease-out, background-color 0.2s, opacity 0.2s;
+    pointer-events: none;
+  "
+></div>
+
+<!-- Responsive JavaScript Code -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.getElementById('customCursor');
+
+    if (!cursor) return;
+
+    // १. माऊसच्या हालचालीनुसार कर्सर हलवणे
+    document.addEventListener('mousemove', function(e) {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // २. Hover Effect (Event Delegation - हे सर्विस पेजवरील सर्व लिंक्स/बटन्सवर नक्की काम करेल)
+    document.addEventListener('mouseover', function(e) {
+      if (e.target.closest('a, button, input, textarea, select, .btn')) {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+        cursor.classList.remove('bg-primary');
+        cursor.classList.add('bg-danger');
+      }
+    });
+
+    document.addEventListener('mouseout', function(e) {
+      if (e.target.closest('a, button, input, textarea, select, .btn')) {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.classList.remove('bg-danger');
+        cursor.classList.add('bg-primary');
+      }
+    });
+
+    // ३. स्क्रीनच्या बाहेर माऊस गेल्यावर कर्सर लपवणे
+    document.addEventListener('mouseleave', function() {
+      cursor.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', function() {
+      cursor.style.opacity = '1';
+    });
+  });
+</script>
+
+    <!-- SECTION 1: PROJECT HEADER & BANNER -->
+    <header id="header" class="bg-white border-bottom py-4 py-md-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 mb-3">
+                        <i class="bi bi-file-earmark-code me-1"></i> Software Documentation
+                    </span>
+                    <h1 class="display-4 fw-bold text-dark mb-2">Billing & Invoicing Application</h1>
+                    <p class="lead text-secondary mb-4">Complete Technical & Functional Project Documentation</p>
+                    
+                    <div class="p-3 p-md-4 bg-light rounded-4 border shadow-sm text-start">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-info-circle-fill text-primary fs-3 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Project Description</h5>
+                                <p class="text-secondary mb-0 small">
+                                    The Billing & Invoicing Application is a web-based system engineered to simplify inventory tracking, invoice generation, customer management, GST/tax calculations, payment processing, and financial reporting for retail and small-to-medium businesses.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-4 my-md-5">
+
+        <!-- SECTION 2: APPLICATION INFORMATION -->
+        <section id="info" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-primary text-white rounded-3 p-2 me-3"><i class="bi bi-info-square fs-4"></i></div>
+                <h2 class="fw-bold mb-0 fs-3 fs-md-2">1. Application Information</h2>
+            </div>
+            
+            <div class="row g-3 g-md-4">
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm bg-white p-2 p-md-3">
+                        <div class="card-body p-2 p-md-3">
+                            <i class="bi bi-app-indicator text-primary fs-3 mb-2 d-block"></i>
+                            <h6 class="text-uppercase text-muted small fw-bold">Application Name</h6>
+                            <p class="fw-bold text-dark fs-6 fs-md-5 mb-0">Billing Software</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm bg-white p-2 p-md-3">
+                        <div class="card-body p-2 p-md-3">
+                            <i class="bi bi-laptop text-success fs-3 mb-2 d-block"></i>
+                            <h6 class="text-uppercase text-muted small fw-bold">Project Type</h6>
+                            <p class="fw-bold text-dark fs-6 fs-md-5 mb-0">Web Billing App</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm bg-white p-2 p-md-3">
+                        <div class="card-body p-2 p-md-3">
+                            <i class="bi bi-calculator text-warning fs-3 mb-2 d-block"></i>
+                            <h6 class="text-uppercase text-muted small fw-bold">Category</h6>
+                            <p class="fw-bold text-dark fs-6 fs-md-5 mb-0">Finance & POS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm bg-white p-2 p-md-3">
+                        <div class="card-body p-2 p-md-3">
+                            <i class="bi bi-calendar-check text-info fs-3 mb-2 d-block"></i>
+                            <h6 class="text-uppercase text-muted small fw-bold">Development Date</h6>
+                            <p class="fw-bold text-dark fs-6 fs-md-5 mb-0">July 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+                                    
+
+        <!-- SECTION 3: PROJECT OVERVIEW -->
+        <section id="overview" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-primary text-white rounded-3 p-2 me-3"><i class="bi bi-journal-text fs-4"></i></div>
+                <h2 class="fw-bold mb-0 fs-3 fs-md-2">2. Project Overview</h2>
+            </div>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm bg-white h-100 p-3 p-md-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-bullseye fs-3 text-primary me-3"></i>
+                            <h5 class="fw-bold mb-0">Purpose of the Application</h5>
+                        </div>
+                        <p class="text-secondary mb-0">
+                            To automate billing and invoicing operations, reduce manual calculation errors, maintain real-time stock levels, and generate instant printable or digital receipts (PDF/Thermal) for customers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm bg-white h-100 p-3 p-md-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-people fs-3 text-success me-3"></i>
+                            <h5 class="fw-bold mb-0">Target Audience</h5>
+                        </div>
+                        <p class="text-secondary mb-0">
+                            Retail store owners, shop billing operators, cashiers, freelancers, wholesalers, service providers, and business administrators who require fast checkout counters and clear financial tracking.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm bg-white h-100 p-3 p-md-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-graph-up-arrow fs-3 text-warning me-3"></i>
+                            <h5 class="fw-bold mb-0">Business Objective</h5>
+                        </div>
+                        <p class="text-secondary mb-0">
+                            To accelerate transaction speeds at checkout counters, eliminate billing bottlenecks, provide real-time sales revenue analytics, track pending payments, and streamline tax compliance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm bg-white h-100 p-3 p-md-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle fs-3 text-info me-3"></i>
+                            <h5 class="fw-bold mb-0">Benefits & User Experience</h5>
+                        </div>
+                        <p class="text-secondary mb-0">
+                            Offers an ultra-fast billing interface with keyboard shortcuts, barcode scanner integration support, dynamic tax/discount calculations, persistent invoice history, and instant invoice print previews.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+            <div class="row g-3 g-md-4" id="pageBreakdownContainer"></div>
+        </section>
+
+        <!-- SECTION 7: PROJECT MODULES -->
+        <section id="modules" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-primary text-white rounded-3 p-2 me-3"><i class="bi bi-cpu fs-4"></i></div>
+                <h2 class="fw-bold mb-0 fs-3 fs-md-2">3. Application Modules</h2>
+            </div>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card border-0 shadow-sm bg-white h-100">
+                        <div class="card-body p-3 p-md-4">
+                            <i class="bi bi-speedometer2 text-primary fs-2 mb-2"></i>
+                            <h5 class="fw-bold">1. Dashboard & Analytics</h5>
+                            <p class="text-secondary small mb-0">
+                                Summary cards for daily sales, revenue totals, total invoices generated, unpaid dues, and top-selling items.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card border-0 shadow-sm bg-white h-100">
+                        <div class="card-body p-3 p-md-4">
+                            <i class="bi bi-calculator text-success fs-2 mb-2"></i>
+                            <h5 class="fw-bold">2. POS & Billing Terminal</h5>
+                            <p class="text-secondary small mb-0">
+                                Fast barcode scanning, quick product pickers, instant item row generation, live tax additions, and discount overrides.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card border-0 shadow-sm bg-white h-100">
+                        <div class="card-body p-3 p-md-4">
+                            <i class="bi bi-box-seam text-warning fs-2 mb-2"></i>
+                            <h5 class="fw-bold">3. Inventory & Product Module</h5>
+                            <p class="text-secondary small mb-0">
+                                Item catalog with stock quantity tracking, price lists, SKU numbers, barcode tagging, and low-stock warnings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card border-0 shadow-sm bg-white h-100">
+                        <div class="card-body p-3 p-md-4">
+                            <i class="bi bi-person-lines-fill text-info fs-2 mb-2"></i>
+                            <h5 class="fw-bold">4. Customer & Ledger Module</h5>
+                            <p class="text-secondary small mb-0">
+                                Directory of customer contact details, credit balance ledgers, purchase history, and outstanding payment tracking.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card border-0 shadow-sm bg-white h-100">
+                        <div class="card-body p-3 p-md-4">
+                            <i class="bi bi-cash-coin text-danger fs-2 mb-2"></i>
+                            <h5 class="fw-bold">5. Payment Processing Module</h5>
+                            <p class="text-secondary small mb-0">
+                                Supports Cash, UPI, Card, Net Banking, and Credit options along with partial payments and change calculation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card border-0 shadow-sm bg-white h-100">
+                        <div class="card-body p-3 p-md-4">
+                            <i class="bi bi-printer text-dark fs-2 mb-2"></i>
+                            <h5 class="fw-bold">6. Print & Export Module</h5>
+                            <p class="text-secondary small mb-0">
+                                Thermal printer formatting, standard A4/A5 PDF generation, invoice downloading, and email/WhatsApp receipt links.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm bg-white">
+                        <div class="card-body p-3 p-md-4 d-flex align-items-center">
+                            <i class="bi bi-gear-fill text-primary fs-1 me-3 me-md-4"></i>
+                            <div>
+                                <h5 class="fw-bold">7. System Settings & Tax Configuration Module</h5>
+                                <p class="text-secondary mb-0 small">
+                                    Configures company branding (Logo, Address, Tax ID/GSTIN), customizable tax rates (CGST/SGST/VAT), currency symbols, terms & conditions, and cashier user accounts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: PROJECT WORKFLOW -->
+        <section id="workflow" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-primary text-white rounded-3 p-2 me-3"><i class="bi bi-diagram-3 fs-4"></i></div>
+                <h2 class="fw-bold mb-0 fs-3 fs-md-2">4. Application Billing Workflow</h2>
+            </div>
+
+            <div class="card border-0 shadow-sm bg-white p-3 p-md-4">
+                <p class="text-secondary text-center mb-4">Standard Invoicing & Checkout Flow</p>
+
+                <div class="row g-3 text-center justify-content-center align-items-center">
+                    
+                    <!-- Step 1 -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="p-3 border rounded-3 bg-light h-100">
+                            <i class="bi bi-box-arrow-in-right fs-2 text-primary d-block mb-1"></i>
+                            <span class="fw-bold d-block">1. Login</span>
+                            <small class="text-muted">Auth / Session</small>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-1 text-muted fs-4"><i class="bi bi-arrow-right d-none d-md-inline"></i><i class="bi bi-arrow-down d-md-none"></i></div>
+
+                    <!-- Step 2 -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="p-3 border rounded-3 bg-light h-100">
+                            <i class="bi bi-person-add fs-2 text-primary d-block mb-1"></i>
+                            <span class="fw-bold d-block">2. Customer</span>
+                            <small class="text-muted">Select / Walk-in</small>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-1 text-muted fs-4"><i class="bi bi-arrow-right d-none d-md-inline"></i><i class="bi bi-arrow-down d-md-none"></i></div>
+
+                    <!-- Step 3 -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="p-3 border rounded-3 bg-light h-100">
+                            <i class="bi bi-upc-scan fs-2 text-primary d-block mb-1"></i>
+                            <span class="fw-bold d-block">3. Add Items</span>
+                            <small class="text-muted">Scan / Select</small>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-1 text-muted fs-4"><i class="bi bi-arrow-right d-none d-md-inline"></i><i class="bi bi-arrow-down d-md-none"></i></div>
+
+                    <!-- Step 4 -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="p-3 border rounded-3 bg-light h-100">
+                            <i class="bi bi-percent fs-2 text-primary d-block mb-1"></i>
+                            <span class="fw-bold d-block">4. Taxes</span>
+                            <small class="text-muted">Auto-calculated</small>
+                        </div>
+                    </div>
+
+                    <div class="col-12 my-2 d-none d-lg-block"><i class="bi bi-arrow-down fs-4 text-muted"></i></div>
+
+                    <!-- Step 5 -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="p-3 border rounded-3 bg-light h-100">
+                            <i class="bi bi-credit-card fs-2 text-primary d-block mb-1"></i>
+                            <span class="fw-bold d-block">5. Payment</span>
+                            <small class="text-muted">Cash, Card, UPI</small>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-1 text-muted fs-4"><i class="bi bi-arrow-right d-none d-md-inline"></i><i class="bi bi-arrow-down d-md-none"></i></div>
+
+                    <!-- Step 6 -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="p-3 border rounded-3 bg-light h-100">
+                            <i class="bi bi-printer fs-2 text-success d-block mb-1"></i>
+                            <span class="fw-bold d-block">6. Invoice</span>
+                            <small class="text-muted">Print / PDF</small>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-1 text-muted fs-4"><i class="bi bi-arrow-right d-none d-md-inline"></i><i class="bi bi-arrow-down d-md-none"></i></div>
+
+                    <!-- Step 7 -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="p-3 border rounded-3 bg-light h-100">
+                            <i class="bi bi-bar-chart-line fs-2 text-primary d-block mb-1"></i>
+                            <span class="fw-bold d-block">7. Sync</span>
+                            <small class="text-muted">Update Stock</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    < <!-- Footer Section -->
+    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 pb-4">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="fw-bold text-white mb-3"><i class="bi bi-code-slash me-2"></i>Zapcodex Technology</h4>
+                    <p class="text-white small">Delivering world-class IT software solutions and digital products designed to scale businesses seamlessly globally.</p>
+                    <p class="text-white small mb-1"><i class="bi bi-geo-alt text-primary me-2"></i>Zapcodex Technology, Near Bus Stand, Ishwarpur</p>
+                    <p class="text-white  small mb-1"><i class="bi bi-envelope text-primary me-2"></i>info@zapcodex.com</p>
+                    <p class="text-white  small"><i class="bi bi-telephone text-primary me-2"></i>+91 7028501431</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Srvices</h5>
+                    <ul class="list-unstyled text-white small">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="bi bi-chevron-right text-white me-1"></i>Web Development</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="bi bi-chevron-right text-white me-1"></i>App Development</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="bi bi-chevron-right text-white me-1"></i>UI/UX Design</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="bi bi-chevron-right text-white me-1"></i>Digital Marketing</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="bi bi-chevron-right text-white me-1"></i>Cloud Architecture</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <p class="text-white small">Subscribe for recent technological developments and service updates.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="row align-items-center pt-2">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class=" mb-0 ">&copy; 2026 TechUp Solutions. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="#" class="text-secondary me-3"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-secondary me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-secondary me-3"><i class="bi bi-linkedin fs-5"></i></a>
+                    <a href="#" class="text-secondary"><i class="bi bi-instagram fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dynamic Rendering & Dynamic Circle Cursor JavaScript Code -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ==========================================
+            // CIRCLE CURSOR EFFECT (PURE JS - NO CUSTOM CSS)
+            // ==========================================
+            const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            
+            if (!isTouchDevice) {
+                // Outer Smooth Circle
+                const circleCursor = document.createElement('div');
+                Object.assign(circleCursor.style, {
+                    position: 'fixed',
+                    top: '0',
+                    left: '0',
+                    width: '32px',
+                    height: '32px',
+                    border: '2px solid rgba(13, 110, 253, 0.6)', // Bootstrap Primary Color
+                    borderRadius: '50%',
+                    pointerEvents: 'none',
+                    zIndex: '9999',
+                    transform: 'translate(-50%, -50%)',
+                    transition: 'transform 0.15s ease-out, width 0.2s, height 0.2s, border-color 0.2s',
+                    boxSizing: 'border-box'
+                });
+
+                // Inner Precision Dot
+                const dotCursor = document.createElement('div');
+                Object.assign(dotCursor.style, {
+                    position: 'fixed',
+                    top: '0',
+                    left: '0',
+                    width: '6px',
+                    height: '6px',
+                    backgroundColor: '#0d6efd',
+                    borderRadius: '50%',
+                    pointerEvents: 'none',
+                    zIndex: '10000',
+                    transform: 'translate(-50%, -50%)'
+                });
+
+                document.body.appendChild(circleCursor);
+                document.body.appendChild(dotCursor);
+
+                let mouseX = -100, mouseY = -100;
+                let circleX = -100, circleY = -100;
+
+                window.addEventListener('mousemove', function(e) {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    dotCursor.style.left = mouseX + 'px';
+                    dotCursor.style.top = mouseY + 'px';
+                });
+
+                // Smooth Animation Loop
+                function animateCursor() {
+                    circleX += (mouseX - circleX) * 0.25;
+                    circleY += (mouseY - circleY) * 0.25;
+                    circleCursor.style.left = circleX + 'px';
+                    circleCursor.style.top = circleY + 'px';
+                    requestAnimationFrame(animateCursor);
+                }
+                animateCursor();
+
+                // Interactive Hover Scale Effect
+                const interactiveElements = 'a, button, input, .card, .badge';
+                document.addEventListener('mouseover', function(e) {
+                    if (e.target.closest(interactiveElements)) {
+                        circleCursor.style.width = '48px';
+                        circleCursor.style.height = '48px';
+                        circleCursor.style.borderColor = 'rgba(255, 193, 7, 0.8)'; // Bootstrap Warning Color
+                        circleCursor.style.backgroundColor = 'rgba(13, 110, 253, 0.05)';
+                    }
+                });
+
+                document.addEventListener('mouseout', function(e) {
+                    if (e.target.closest(interactiveElements)) {
+                        circleCursor.style.width = '32px';
+                        circleCursor.style.height = '32px';
+                        circleCursor.style.borderColor = 'rgba(13, 110, 253, 0.6)';
+                        circleCursor.style.backgroundColor = 'transparent';
+                    }
+                });
+            }
+
+            // ==========================================
+            // DYNAMIC SECTION CONTENT RENDERERS
+            // ==========================================
+
+            // 1. Render Screenshot Placeholders
+            const screenshotPages = [
+                "Dashboard", "New Invoice / POS Terminal", "Invoice History / Sales List",
+                "Product / Item Management", "Customer Management", "Tax & Discount Settings",
+                "Payment Receipt Page", "Printable Invoice Preview", "Reports & Analytics",
+                "Expense Management", "User Access & Roles", "Business Profile Settings",
+                "Login / Auth Screen", "System Audit Logs"
+            ];
+
+            const screenshotsContainer = document.getElementById('screenshotContainer');
+            screenshotPages.forEach((title, idx) => {
+                const col = document.createElement('div');
+                col.className = 'col-sm-6 col-md-4 col-lg-3';
+                col.innerHTML = `
+                    <div class="card h-100 border-0 shadow-sm bg-white">
+                        <div class="card-img-top bg-light d-flex flex-column align-items-center justify-content-center border-bottom p-4" style="height: 160px;">
+                            <i class="bi bi-receipt-cutoff fs-1 text-secondary opacity-50 mb-2"></i>
+                            <span class="badge bg-secondary opacity-75">${title} Placeholder</span>
+                        </div>
+                        <div class="card-body p-3 text-center">
+                            <h6 class="fw-bold mb-0 text-dark small">${idx + 1}. ${title}</h6>
+                        </div>
+                    </div>
+                `;
+                screenshotsContainer.appendChild(col);
+            });
+
+            // 2. Render Features List
+            const features = [
+                { title: "Responsive POS Design", icon: "bi-laptop-fill", desc: "Optimized interface for POS touch terminals, tablets, and desktops." },
+                { title: "Instant Invoice Generation", icon: "bi-lightning-charge", desc: "Generates bills in milliseconds with automated subtotal calculations." },
+                { title: "Barcode Reader Support", icon: "bi-upc-scan", desc: "Scan item barcodes directly into active invoice rows." },
+                { title: "Product Stock Tracker", icon: "bi-box-seam", desc: "Auto-deducts inventory levels as invoices are completed." },
+                { title: "Customer Ledger", icon: "bi-journal-bookmark", desc: "Tracks customer balances, credit terms, and transaction histories." },
+                { title: "Tax & GST Handler", icon: "bi-percent", desc: "Supports customizable tax slabs (CGST, SGST, IGST, VAT)." },
+                { title: "Discount Engine", icon: "bi-tags", desc: "Apply item-level or overall percentage and flat amount discounts." },
+                { title: "Multiple Payment Modes", icon: "bi-wallet2", desc: "Accept Cash, Card, UPI, Digital Wallet, or Store Credit." },
+                { title: "Print & PDF Export", icon: "bi-printer", desc: "Direct printing for standard A4, A5, and Thermal receipts." },
+                { title: "Sales Analytics", icon: "bi-graph-up", desc: "Visual graphs showing daily, weekly, and monthly revenues." },
+                { title: "Draft / Hold Invoices", icon: "bi-pause-circle", desc: "Temporarily hold an active bill to serve another customer." },
+                { title: "Returns & Refunds", icon: "bi-arrow-counterclockwise", desc: "Process item returns and credit note generation easily." },
+                { title: "Expense Manager", icon: "bi-cash-stack", desc: "Log daily store operational expenses for profit reporting." },
+                { title: "User Roles & Permissions", icon: "bi-shield-check", desc: "Set limits for Cashier, Manager, and Admin accounts." },
+                { title: "Business Profile Branding", icon: "bi-building-gear", desc: "Add custom store header, logo, phone, address, and GSTIN." },
+                { title: "Low Stock Alerts", icon: "bi-exclamation-triangle", desc: "Warning indicators when products drop below minimum stock." },
+                { title: "Invoice Search & Filter", icon: "bi-search", desc: "Filter bills by date range, invoice ID, or customer name." },
+                { title: "Multi-Currency Support", icon: "bi-currency-exchange", desc: "Configure local currency symbols and decimal formats." },
+                { title: "Digital Receipt Sharing", icon: "bi-share", desc: "Send digital invoice download links via WhatsApp or Email." },
+                { title: "Terms & Footer Notes", icon: "bi-file-earmark-text", desc: "Custom return policies and thank you notes on printed receipts." },
+                { title: "Quick Keyboard Shortcuts", icon: "bi-keyboard", desc: "Hotkeys for fast checkout without touching a mouse." },
+                { title: "Footer with System Info", icon: "bi-info-circle", desc: "Quick status links, documentation links, and system version." }
+            ];
+
+            const featuresContainer = document.getElementById('featuresContainer');
+            features.forEach(feat => {
+                const col = document.createElement('div');
+                col.className = 'col-sm-6 col-md-4 col-lg-3';
+                col.innerHTML = `
+                    <div class="card h-100 border-0 shadow-sm bg-white">
+                        <div class="card-body p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi ${feat.icon} text-primary fs-4 me-2"></i>
+                                <h6 class="fw-bold mb-0 text-dark">${feat.title}</h6>
+                            </div>
+                            <p class="text-secondary small mb-0">${feat.desc}</p>
+                        </div>
+                    </div>
+                `;
+                featuresContainer.appendChild(col);
+            });
+
+            // 3. Render Pages Breakdown
+            const pages = [
+                { title: "Dashboard", desc: "Displays overall metrics including total daily revenue, bill count, pending customer dues, recent transactions, and low stock warnings." },
+                { title: "POS Billing Terminal", desc: "The primary operational screen to add products, adjust quantities, apply discounts, select payment modes, and complete transactions." },
+                { title: "Invoice History", desc: "A searchable database of all created invoices with status indicators (Paid, Unpaid, Partial), print triggers, and cancel options." },
+                { title: "Product Inventory", desc: "List of all stock items with purchase price, selling price, barcode numbers, available stock count, and category filters." },
+                { title: "Customer Ledger", desc: "Manages customer records, contact numbers, tax numbers, transaction logs, and outstanding credit balances." },
+                { title: "Printable Receipt", desc: "A clean print-friendly template structured for standard printer outputs (A4/A5) and thermal POS receipt roll sizes." },
+                { title: "Expense Tracking", desc: "Screen to register operational shop expenses like rent, utilities, and vendor payouts to compute net profitability." },
+                { title: "Reports & Analytics", desc: "Generates exportable financial reports (CSV/PDF) including Sales Summary, Item-wise Sales, Tax Statements, and Inventory Value." }
+            ];
+
+            const pageBreakdownContainer = document.getElementById('pageBreakdownContainer');
+            pages.forEach((pg, idx) => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6 col-lg-3';
+                col.innerHTML = `
+                    <div class="card h-100 border-0 shadow-sm bg-white">
+                        <div class="card-body p-3 p-md-4">
+                            <span class="badge bg-primary mb-2">Screen 0${idx + 1}</span>
+                            <h5 class="fw-bold text-dark mb-2">${pg.title}</h5>
+                            <p class="text-secondary small mb-0">${pg.desc}</p>
+                        </div>
+                    </div>
+                `;
+                pageBreakdownContainer.appendChild(col);
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Dashboard - Project Documentation</title>
+   <!-- Bootstrap 5.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <style>
+    /* Dropdown Hover Effect for Desktop */
+    .dropdown-menu .dropdown-item:hover, 
+    .dropdown-menu .dropdown-item:focus {
+      background-color: var(--bs-primary) !important;
+      color: #ffffff !important;
+    }
+
+    @media (min-width: 992px) {
+      #pageDropdownContainer:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* Custom Cursor Base Settings */
+    #customCursor {
+      width: 24px; 
+      height: 24px; 
+      top: 0; 
+      left: 0; 
+      z-index: 9999; 
+      transform: translate(-50%, -50%); 
+      transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
+      pointer-events: none;
+    }
+
+    /* Custom Hero Overlay & Spacing Adjustments */
+    .hero-section {
+      background: linear-gradient(rgba(13, 110, 253, 0.65), rgba(0, 0, 0, 0.7)), url('images/about.jpg') center/cover no-repeat;
+      min-height: 60vh;
+    }
+  </style>
+</head>
+<body class="bg-white text-dark">
+
+  <!-- Custom Cursor Element -->
+  <div id="customCursor" class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white fs-3" href="index.html">
+        Zapcodex Technology
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center fw-semibold">
+          <li class="nav-item me-lg-3">
+            <a class="nav-link text-white active" href="index.html">Home</a>
+          </li>
+          
+          <!-- Dropdown List -->
+          <li class="nav-item dropdown me-lg-3" id="pageDropdownContainer">
+            <a class="nav-link dropdown-toggle text-white active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu bg-white border-0 shadow" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-dark" href="about.html"><i class="bi bi-info-circle me-2"></i>About Us</a></li>
+              <li><a class="dropdown-item text-dark" href="team.html"><i class="bi bi-people me-2"></i>Team</a></li>
+              <li><a class="dropdown-item text-dark" href="services.html"><i class="bi bi-gear me-2"></i>Services</a></li>
+              <li><a class="dropdown-item text-dark" href="portfolio.html"><i class="bi bi-briefcase me-2"></i>Portfolio</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item me-lg-3">
+            <a class="nav-link text-white active" href="shop.html">Shop</a>
+          </li>
+          <li class="nav-item me-lg-3">
+            <a class="nav-link text-white active" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary rounded-pill px-4 mt-3 mt-lg-0 ms-lg-2">Get Started</a>
+      </div>
+    </div>
+  </nav>
+    <!-- SECTION 1: PROJECT HEADER -->
+    <header id="header" class="bg-white border-bottom py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill px-3 py-2 mb-3">
+                        <i class="bi bi-shield-lock me-1"></i> HIPAA Compliant Architecture
+                    </span>
+                    <h1 class="display-4 fw-bold text-dark mb-2">Healthcare Management Dashboard</h1>
+                    <p class="lead text-secondary mb-4">Complete Technical & Functional Documentation</p>
+                    
+                    <div class="p-4 bg-light rounded-4 border shadow-sm text-start">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-hospital-fill text-danger fs-3 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Project Description</h5>
+                                <p class="text-secondary mb-0">
+                                    A centralized healthcare web platform designed to streamline patient records, appointment scheduling, doctor availability, and electronic medical records (EMR). It enables seamless communication between patients, clinical staff, and administrators.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5">
+
+        <!-- SECTION 2: APPLICATION INFORMATION -->
+        <section id="info" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-danger text-white rounded-3 p-2 me-3"><i class="bi bi-info-square fs-4"></i></div>
+                <h2 class="fw-bold mb-0">1. Application Information</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3"><div class="card h-100 border-0 shadow-sm p-3"><div class="card-body"><i class="bi bi-person-badge text-danger fs-3 mb-2 d-block"></i><h6 class="text-muted text-uppercase fs-7 fw-bold">Platform Name</h6><p class="fw-bold fs-5 mb-0">MediCare Dashboard</p></div></div></div>
+                <div class="col-md-6 col-lg-3"><div class="card h-100 border-0 shadow-sm p-3"><div class="card-body"><i class="bi bi-window-stack text-success fs-3 mb-2 d-block"></i><h6 class="text-muted text-uppercase fs-7 fw-bold">Project Type</h6><p class="fw-bold fs-5 mb-0">Healthcare SAAS</p></div></div></div>
+                <div class="col-md-6 col-lg-3"><div class="card h-100 border-0 shadow-sm p-3"><div class="card-body"><i class="bi bi-capsule text-warning fs-3 mb-2 d-block"></i><h6 class="text-muted text-uppercase fs-7 fw-bold">Category</h6><p class="fw-bold fs-5 mb-0">Health & Medical</p></div></div></div>
+                <div class="col-md-6 col-lg-3"><div class="card h-100 border-0 shadow-sm p-3"><div class="card-body"><i class="bi bi-calendar-event text-info fs-3 mb-2 d-block"></i><h6 class="text-muted text-uppercase fs-7 fw-bold">Dev Date</h6><p class="fw-bold fs-5 mb-0">July 2026</p></div></div></div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROJECT OVERVIEW -->
+        <section id="overview" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-danger text-white rounded-3 p-2 me-3"><i class="bi bi-journal-medical fs-4"></i></div>
+                <h2 class="fw-bold mb-0">2. Project Overview</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 p-4">
+                        <h5 class="fw-bold text-danger"><i class="bi bi-shield-check me-2"></i>Business Objective</h5>
+                        <p class="text-secondary">To provide a secure, scalable digital interface for hospital management to minimize administrative lag, improve patient outcome tracking, and ensure data integrity across clinical departments.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 p-4">
+                        <h5 class="fw-bold text-danger"><i class="bi bi-people me-2"></i>Target Audience</h5>
+                        <p class="text-secondary">Hospital Administrators, Registered Doctors, Nurses, Medical Front-desk Staff, and Patients requiring remote access to their health history and appointment logs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SCREENSHOTS -->
+        <section id="screenshots" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-danger text-white rounded-3 p-2 me-3"><i class="bi bi-images fs-4"></i></div>
+                <h2 class="fw-bold mb-0">3. Interface Screenshots</h2>
+            </div>
+            <div class="row g-4" id="screenshotContainer"></div>
+        </section>
+
+        <!-- SECTION 5: FEATURES -->
+        <section id="features" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-danger text-white rounded-3 p-2 me-3"><i class="bi bi-clipboard-pulse fs-4"></i></div>
+                <h2 class="fw-bold mb-0">4. Key Clinical Features</h2>
+            </div>
+            <div class="row g-3" id="featuresContainer"></div>
+        </section>
+
+        <!-- SECTION 6: MODULES -->
+        <section id="modules" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-danger text-white rounded-3 p-2 me-3"><i class="bi bi-diagram-3 fs-4"></i></div>
+                <h2 class="fw-bold mb-0">5. System Architecture Modules</h2>
+            </div>
+            <div class="row g-4" id="moduleContainer"></div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Healthcare Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Screens
+            const screens = ["Admin Dashboard", "Doctor Schedule", "Patient Records (EMR)", "Appointment Booking", "Lab Reports", "Pharmacy Inventory", "Billing & Payments", "Staff Directory"];
+            const screenCont = document.getElementById('screenshotContainer');
+            screens.forEach(s => {
+                screenCont.innerHTML += `<div class="col-md-3"><div class="card p-3 text-center border-0 shadow-sm"><i class="bi bi-display fs-1 text-secondary opacity-50"></i><p class="mt-2 fw-bold">${s}</p></div></div>`;
+            });
+
+            // Features
+            const feats = [
+                {t: "Real-time Appointments", i: "bi-calendar-check", d: "Manage doctor availability and booking slots dynamically."},
+                {t: "Patient EMR", i: "bi-file-earmark-medical", d: "Digital storage of medical history, allergies, and vitals."},
+                {t: "Doctor Portals", i: "bi-person-badge", d: "Individual dashboards for prescribing and note-taking."},
+                {t: "Lab Integration", i: "bi-flask", d: "Direct upload of test results to patient profiles."},
+                {t: "Secure Auth", i: "bi-lock", d: "Role-based access control (RBAC) for data privacy."},
+                {t: "Analytics", i: "bi-graph-up-arrow", d: "Insights on patient inflow and treatment efficacy."}
+            ];
+            const featCont = document.getElementById('featuresContainer');
+            feats.forEach(f => {
+                featCont.innerHTML += `<div class="col-md-4"><div class="card p-4 border-0 shadow-sm"><div class="d-flex align-items-center mb-3"><i class="bi ${f.i} fs-3 text-danger me-3"></i><h6 class="fw-bold mb-0">${f.t}</h6></div><p class="small text-secondary">${f.d}</p></div></div>`;
+            });
+
+            // Modules
+            const mods = [
+                {t: "Auth Module", d: "Handles secure login for Patients, Doctors, and Admins using encrypted tokens."},
+                {t: "Appointment Module", d: "Handles slot management, cancellations, rescheduling, and automated reminders."},
+                {t: "Clinical Module", d: "Manages prescriptions, diagnosis logs, and treatment plan tracking."},
+                {t: "Billing Module", d: "Processes insurance claims, co-pays, and generates itemized hospital bills."}
+            ];
+            const modCont = document.getElementById('moduleContainer');
+            mods.forEach(m => {
+                modCont.innerHTML += `<div class="col-md-6"><div class="card p-4 border-start border-danger border-4 shadow-sm"><h5 class="fw-bold text-danger">${m.t}</h5><p class="text-secondary mb-0">${m.d}</p></div></div>`;
+            });
+        });
+    </script>
+</body>
+</html>

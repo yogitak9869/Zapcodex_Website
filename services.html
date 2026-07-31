@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Working Process - IT Solutions & Services</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Blue Background Cursor Animation Circle -->
+    <div class="cursor-circle" id="cursorCircle"></div>
+
+   <!-- Black Navbar with White Text -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
+  <img src="images/logo.jpeg" alt="Zapcodex Technology Logo" height="70" class="rounded">
+  Zapcodex Technology
+</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center fw-semibold">
+                    <li class="nav-item me-3">
+                        <a class="nav-link text-white active" href="index.html">Home</a>
+                    </li>
+                 
+                    <!-- Dropdown List with Hover Open/Close Behavior -->
+                    <li class="nav-item dropdown me-3" id="pageDropdownContainer">
+                        <a class="nav-link dropdown-toggle text-white active" href="pages.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Page
+                        </a>
+                        <ul class="dropdown-menu bg-white border-0 shadow" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-dark hover-primary" href="about.html"><i class="bi bi-info-circle me-2"></i>About Us</a></li>
+                            <li><a class="dropdown-item text-dark hover-primary" href="team.html"><i class="bi bi-people me-2"></i>Team</a></li>
+                            <li><a class="dropdown-item text-dark hover-primary" href="services.html"><i class="bi bi-gear me-2"></i>Services</a></li>
+                            <li><a class="dropdown-item text-dark hover-primary" href="portfolio.html"><i class="bi bi-briefcase me-2"></i>Portfolio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item me-3">
+                        <a class="nav-link text-white active" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link text-white active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary rounded-pill px-4 ms-lg-2">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .dropdown-menu .dropdown-item:hover, 
+        .dropdown-menu .dropdown-item:focus {
+            background-color: var(--bs-primary) !important;
+            color: #ffffff !important;
+        }
+
+        /* Enable hover dropdown behavior for large screens */
+        @media (min-width: 992px) {
+            #pageDropdownContainer:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
+    </style>
+    <!-- Custom Cursor Element -->
+<div 
+  id="customCursor" 
+  class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"
+  style="
+    width: 24px; 
+    height: 24px; 
+    top: 0; 
+    left: 0; 
+    z-index: 99999; 
+    transform: translate(-50%, -50%); 
+    transition: transform 0.15s ease-out, background-color 0.2s, opacity 0.2s;
+    pointer-events: none;
+  "
+></div>
+
+<!-- Responsive JavaScript Code -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.getElementById('customCursor');
+
+    if (!cursor) return;
+
+    // १. माऊसच्या हालचालीनुसार कर्सर हलवणे
+    document.addEventListener('mousemove', function(e) {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // २. Hover Effect (Event Delegation - हे सर्विस पेजवरील सर्व लिंक्स/बटन्सवर नक्की काम करेल)
+    document.addEventListener('mouseover', function(e) {
+      if (e.target.closest('a, button, input, textarea, select, .btn')) {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+        cursor.classList.remove('bg-primary');
+        cursor.classList.add('bg-danger');
+      }
+    });
+
+    document.addEventListener('mouseout', function(e) {
+      if (e.target.closest('a, button, input, textarea, select, .btn')) {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.classList.remove('bg-danger');
+        cursor.classList.add('bg-primary');
+      }
+    });
+
+    // ३. स्क्रीनच्या बाहेर माऊस गेल्यावर कर्सर लपवणे
+    document.addEventListener('mouseleave', function() {
+      cursor.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', function() {
+      cursor.style.opacity = '1';
+    });
+  });
+</script>
+
+     <!-- Hero Section with Subtle Transparent Blue Overlay -->
+<header class="position-relative text-white py-5 d-flex align-items-center" 
+        style="min-height: 85vh; background: linear-gradient(rgba(10, 34, 64, 0.45), rgba(0, 102, 204, 0.35)), url('images/index.jpg') center/cover no-repeat;">
+    <div class="container py-5 text-center" data-aos="fade-up" data-aos-duration="1000">
+        
+        <h1 class="display-3 fw-bold mb-4">Empowering Businesses with Cutting-Edge IT Services</h1>
+        
+        <div class="d-flex justify-content-center gap-3">
+            <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-4">Start a Project</a>
+        </div>
+        
+    </div>
+</header>
+    <!-- Back to Top Button (SVG सह) -->
+<button 
+  type="button" 
+  id="scrollTopBtn" 
+  class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3 m-md-4 shadow-lg d-none align-items-center justify-content-center p-0"
+  style="width: 48px; height: 48px; z-index: 1050;" 
+  aria-label="Scroll to top"
+>
+  <!-- Direct SVG Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+  </svg>
+</button>
+
+<!-- JavaScript -->
+<script>
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollTopBtn.classList.remove('d-none');
+      scrollTopBtn.classList.add('d-flex');
+    } else {
+      scrollTopBtn.classList.remove('d-flex');
+      scrollTopBtn.classList.add('d-none');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+
+    <!-- Feature Highlights -->
+    <section class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Card 1: Expert Team Members -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border bg-white p-4 text-center rounded-0 shadow-sm">
+                        <div class="mb-4 text-primary fs-1">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h3 class="fw-bold fs-4 mb-3 text-dark">Expert Team Members</h3>
+                        <p class="text-muted small mb-4 lh-base">
+                            We are architects of innovation, trailblazers technological advancement partners
+                        </p>
+                        <div class="mt-auto">
+                            <a href="#" class="text-dark fw-bold text-decoration-none d-inline-flex align-items-center">
+                                Learn More <i class="bi bi-arrow-up-right ms-2 fs-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Fastest Customer Service -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border bg-white p-4 text-center rounded-0 shadow-sm">
+                        <div class="mb-4 text-primary fs-1">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h3 class="fw-bold fs-4 mb-3 text-dark">Fastest Customer Service</h3>
+                        <p class="text-muted small mb-4 lh-base">
+                            We are architects of innovation, trailblazers technological advancement partners
+                        </p>
+                        <div class="mt-auto">
+                            <a href="#" class="text-dark fw-bold text-decoration-none d-inline-flex align-items-center">
+                                Learn More <i class="bi bi-arrow-up-right ms-2 fs-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Competitive Pricing Plan -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border bg-white p-4 text-center rounded-0 shadow-sm">
+                        <div class="mb-4 text-primary fs-1">
+                            <i class="bi bi-cash-coin"></i>
+                        </div>
+                        <h3 class="fw-bold fs-4 mb-3 text-dark">Competitive Pricing Plan</h3>
+                        <p class="text-muted small mb-4 lh-base">
+                            We are architects of innovation, trailblazers technological advancement partners
+                        </p>
+                        <div class="mt-auto">
+                            <a href="#" class="text-dark fw-bold text-decoration-none d-inline-flex align-items-center">
+                                Learn More <i class="bi bi-arrow-up-right ms-2 fs-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional IT Services Grid Section -->
+    <section id="services" class="py-5 bg-white">
+        <div class="container py-4">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-down">
+                <h2 class="fw-bold display-5 text-dark">
+                    We deal with the aspects of<br class="d-none d-sm-inline"> professional IT services
+                </h2>
+            </div>
+            
+            <!-- 2-Column Grid -->
+            <div class="row g-4">
+                
+                <!-- Service 1: Web Development -->
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm p-4 rounded-0 bg-white h-100">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="text-primary fs-1 lh-1 flex-shrink-0">
+                                <i class="bi bi-window"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 mb-2 text-dark">Web Development</h3>
+                                <p class="text-muted mb-0 lh-base">
+                                    We are architects of innovation, trailblazers of technological advancement, and partners in your success
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: App Development -->
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm p-4 rounded-0 bg-white h-100">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="text-primary fs-1 lh-1 flex-shrink-0">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 mb-2 text-dark">App Development</h3>
+                                <p class="text-muted mb-0 lh-base">
+                                    We are architects of innovation, trailblazers of technological advancement, and partners in your success
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: UI/UX Design -->
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm p-4 rounded-0 bg-white h-100">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="text-primary fs-1 lh-1 flex-shrink-0">
+                                <i class="bi bi-display"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 mb-2 text-dark">UI/UX Design</h3>
+                                <p class="text-muted mb-0 lh-base">
+                                    We are architects of innovation, trailblazers of technological advancement, and partners in your success
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Digital Marketing -->
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card border-0 shadow-sm p-4 rounded-0 bg-white h-100">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="text-primary fs-1 lh-1 flex-shrink-0">
+                                <i class="bi bi-megaphone"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 mb-2 text-dark">Digital Marketing</h3>
+                                <p class="text-muted mb-0 lh-base">
+                                    We are architects of innovation, trailblazers of technological advancement, and partners in your success
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: IT Management -->
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card border-0 shadow-sm p-4 rounded-0 bg-white h-100">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="text-primary fs-1 lh-1 flex-shrink-0">
+                                <i class="bi bi-gear-wide-connected"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 mb-2 text-dark">IT Management</h3>
+                                <p class="text-muted mb-0 lh-base">
+                                    We are architects of innovation, trailblazers of technological advancement, and partners in your success
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6: Cyber Security -->
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card border-0 shadow-sm p-4 rounded-0 bg-white h-100">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="text-primary fs-1 lh-1 flex-shrink-0">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 mb-2 text-dark">Cyber Security</h3>
+                                <p class="text-muted mb-0 lh-base">
+                                    We are architects of innovation, trailblazers of technological advancement, and partners in your success
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Working Process Section -->
+    <section id="process" class="py-5 bg-light position-relative overflow-hidden">
+        <div class="container py-5">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-down">
+                <h2 class="fw-bold display-5 text-dark">
+                    Our working process on how<br class="d-none d-sm-inline"> to grow your business
+                </h2>
+            </div>
+            
+            <!-- Process Steps Container -->
+            <div class="row g-4 align-items-center justify-content-center">
+                
+                <!-- Step 1 -->
+                <div class="col-12 col-md-4 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="position-relative d-inline-block mb-4">
+                        <span class="position-absolute top-0 start-0 translate-middle badge bg-white text-dark shadow-sm border rounded-pill px-2 py-1 fw-bold fs-6 z-3">01</span>
+                        <div class="bg-white rounded-circle shadow-sm border d-flex align-items-center justify-content-center mx-auto position-relative" style="width: 180px; height: 180px;">
+                            <div class="text-primary display-5">
+                                <i class="bi bi-chat-square-text-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">Initiation & Planning</h3>
+                    <p class="text-muted small mb-0 px-xl-3 lh-base">
+                        We are architects innovation trailblazers of technological advancement
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-12 col-md-4 text-center" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="position-relative d-inline-block mb-4">
+                        <span class="position-absolute top-0 start-0 translate-middle badge bg-white text-dark shadow-sm border rounded-pill px-2 py-1 fw-bold fs-6 z-3">02</span>
+                        <div class="bg-white rounded-circle shadow-sm border d-flex align-items-center justify-content-center mx-auto position-relative" style="width: 180px; height: 180px;">
+                            <div class="text-primary display-5">
+                                <i class="bi bi-code-square"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">Execution & Development</h3>
+                    <p class="text-muted small mb-0 px-xl-3 lh-base">
+                        We are architects innovation trailblazers of technological advancement
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-12 col-md-4 text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="position-relative d-inline-block mb-4">
+                        <span class="position-absolute top-0 start-0 translate-middle badge bg-white text-dark shadow-sm border rounded-pill px-2 py-1 fw-bold fs-6 z-3">03</span>
+                        <div class="bg-white rounded-circle shadow-sm border d-flex align-items-center justify-content-center mx-auto position-relative" style="width: 180px; height: 180px;">
+                            <div class="text-primary display-5">
+                                <i class="bi bi-clipboard-check-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold fs-4 mb-2 text-dark">Testing & Maintenance</h3>
+                    <p class="text-muted small mb-0 px-xl-3 lh-base">
+                        We are architects innovation trailblazers of technological advancement
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Service Highlight Section -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Exclusive IT Solutions" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <h2 class="fw-bold display-6 mt-2 mb-4">Exclusive Technology To Provide IT Solutions</h2>
+                    <p class="text-muted mb-4">We deliver cutting-edge software products tailored to meet your business challenges. Our specialized team works round the clock to ensure high reliability and scalability.</p>
+                     
+                    <!-- Feature 1 -->
+                    <div class="d-flex mb-3">
+                        <div class="me-3 text-primary"><i class="bi bi-check-circle-fill fs-4"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Easy Build Customer Reports And Dashboards</h5>
+                            <p class="text-muted small mb-0">Simplify Customer Reporting & Dashboard Management with automated analytics.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="d-flex mb-3">
+                        <div class="me-3 text-primary"><i class="bi bi-check-circle-fill fs-4"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Advanced Technology Stack</h5>
+                            <p class="text-muted small mb-0">We utilize cloud systems, AI tools, and microservice architectures for speed.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="d-flex mb-3">
+                        <div class="me-3 text-primary"><i class="bi bi-check-circle-fill fs-4"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1">24/7 Dedicated IT Support</h5>
+                            <p class="text-muted small mb-0">Continuous monitoring and immediate resolution for uninterrupted business flow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section id="contact" class="py-5 bg-primary text-white">
+        <div class="container py-4 text-center" data-aos="zoom-in" data-aos-duration="800">
+            <h2 class="fw-bold display-6 mb-3">Ready to Transform Your IT Infrastructure?</h2>
+            <p class="lead opacity-75 mb-4">Let’s discuss your project and discover how our solutions can increase your productivity.</p>
+            <a href="contact.html" class="btn btn-light text-primary btn-lg rounded-pill px-5 fw-bold shadow">Contact Us Today</a>
+        </div>
+    </section>
+
+  <!-- Custom CSS (Add to your stylesheet or style tag) -->
+<style>
+  .footer-link {
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+  .footer-link:hover {
+    color: #0d6efd !important; /* Primary color hover */
+    transform: translateX(3px);
+  }
+  .social-icon {
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+  .social-icon:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px);
+  }
+</style>
+
+<!-- Footer Section -->
+<footer id="contact" class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4 pb-4">
+      
+      <!-- Column 1: Company Info -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h4 class="fw-bold text-white mb-3 d-flex align-items-center">
+          <img src="images/logo.jpeg" alt="Zapcodex Logo" class="img-fluid me-2" style="max-height: 70px; object-fit: contain;">
+          Zapcodex
+        </h4>
+        <p class="text-white-50 small">
+          Delivering world-class IT software solutions and digital products designed to scale businesses seamlessly globally.
+        </p>
+        <ul class="list-unstyled small text-white-50 mb-0">
+          <li class="mb-2 d-flex align-items-start">
+            <i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i>
+            <span>Zapcodex Technology, Near Bus Stand, Ishwarpur</span>
+          </li>
+          <li class="mb-2 d-flex align-items-center">
+            <i class="bi bi-envelope-fill text-primary me-2"></i>
+            <a href="mailto:info@zapcodex.com" class="text-white-50 text-decoration-none">info@zapcodex.com</a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="bi bi-telephone-fill text-primary me-2"></i>
+            <a href="tel:+917028501431" class="text-white-50 text-decoration-none">+91 7028501431</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Quick Links / Services -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h5 class="fw-bold text-white mb-3">Services</h5>
+        <ul class="list-unstyled small mb-0">
+          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Web Development</a></li>
+          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>App Development</a></li>
+          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>UI/UX Design</a></li>
+          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Digital Marketing</a></li>
+          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Cloud Architecture</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Location Map -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h5 class="fw-bold text-white mb-3">Our Location</h5>
+        <div class="ratio ratio-16x9 ratio-sm-4x3 rounded overflow-hidden shadow-sm border border-secondary">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.516329368624!2d74.2580398103618!3d17.047378583715393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc175019c552ca1%3A0xe5fd93ee9d356e9b!2sZapcodex!5e0!3m2!1sen!2sin!4v1785473371056!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h5 class="fw-bold text-white mb-3">Newsletter</h5>
+        <p class="text-white-50 small">Subscribe for recent technological developments and service updates.</p>
+        <form onSubmit="return false;">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" aria-label="Enter your email" required>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary opacity-50 my-3">
+
+    <!-- Bottom Bar: Copyright & Socials -->
+    <div class="row align-items-center pt-2">
+      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+        <p class="mb-0 text-white-50 small">&copy; 2026 Zapcodex Technology. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="text-white-50 me-3 social-icon" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+        <a href="#" class="text-white-50 me-3 social-icon" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+        <a href="#" class="text-white-50 me-3 social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+        <a href="#" class="text-white-50 social-icon" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- Floating Scroll-To-Top Button -->
+    <a href="#" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; z-index: 1000;">
+        <i class="bi bi-arrow-up fs-5"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Custom Blue Circle Cursor Interaction Script (No Custom CSS sheet needed)
+        const cursor = document.getElementById('custom-cursor');
+        
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // Expand cursor on interactive elements hover
+        const interactiveElements = document.querySelectorAll('a, button, .card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '55px';
+                cursor.style.height = '55px';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '30px';
+                cursor.style.height = '30px';
+            });
+        });
+        
+    </script>
+</body>
+</html>
