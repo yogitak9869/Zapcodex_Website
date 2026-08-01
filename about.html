@@ -12,94 +12,72 @@
   <!-- Animate.css CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
-  <style>
-    /* Prevent horizontal overflow on mobile screen */
-    html, body {
-      overflow-x: hidden;
-    }
+  
+    <style>
+    
+        /* Custom Variables */
+        :root {
+            --bs-primary: #0d6efd;
+        }
 
-    /* Dropdown Hover Effect for Desktop */
-    .dropdown-menu .dropdown-item:hover, 
-    .dropdown-menu .dropdown-item:focus {
-      background-color: var(--bs-primary) !important;
-      color: #ffffff !important;
-    }
+        /* Custom Cursor Base Settings */
+        #customCursor {
+            width: 24px; 
+            height: 24px; 
+            top: 0; 
+            left: 0; 
+            z-index: 9999; 
+            transform: translate(-50%, -50%); 
+            transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
+            pointer-events: none;
+        }
 
-    @media (min-width: 992px) {
-      #pageDropdownContainer:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-      }
-    }
+        /* Dropdown Hover Effect for Desktop */
+        .dropdown-menu .dropdown-item:hover, 
+        .dropdown-menu .dropdown-item:focus {
+            background-color: var(--bs-primary) !important;
+            color: #ffffff !important;
+        }
 
-    /* Custom Cursor Base Settings */
-    #customCursor {
-      width: 24px; 
-      height: 24px; 
-      top: 0; 
-      left: 0; 
-      z-index: 9999; 
-      transform: translate(-50%, -50%); 
-      transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
-      pointer-events: none;
-    }
+        @media (min-width: 992px) {
+            #pageDropdownContainer:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
 
-    /* Custom Hero Overlay & Spacing Adjustments */
-    .hero-section {
-      background: linear-gradient(rgba(13, 110, 253, 0.65), rgba(0, 0, 0, 0.7)), url('images/about.jpg') center/cover no-repeat;
-      min-height: 60vh;
-    }
+        /* Custom Hero Overlay & Spacing Adjustments */
+        .hero-section {
+            background: linear-gradient(rgba(13, 110, 253, 0.75), rgba(0, 0, 0, 0.8)), 
+                        url('https://picsum.photos/1920/1080') center/cover no-repeat;
+            min-height: 65vh;
+        }
 
-    /* Mobile Responsive Custom Tweaks */
-    @media (max-width: 576px) {
-      .navbar-brand {
-        font-size: 1.25rem !important;
-      }
-      .navbar-brand img {
-        height: 45px !important;
-      }
-      .hero-section {
-        min-height: 40vh;
-      }
-      .hero-section h1 {
-        font-size: 2.2rem !important;
-      }
-      .hero-section p {
-        font-size: 0.95rem !important;
-      }
-      .display-6 {
-        font-size: 1.5rem !important;
-      }
-      .display-5 {
-        font-size: 2rem !important;
-      }
-    }
+        /* Horizontal Scroll Hide Scrollbar */
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .horizontal-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
-    /* Footer Responsive Hover Links */
-    .footer-link {
-      transition: color 0.2s ease, transform 0.2s ease;
-      display: inline-block;
-    }
-    .footer-link:hover {
-      color: #0d6efd !important;
-      transform: translateX(3px);
-    }
-    .social-icon {
-      transition: color 0.2s ease, transform 0.2s ease;
-      display: inline-block;
-    }
-    .social-icon:hover {
-      color: #ffffff !important;
-      transform: translateY(-2px);
-    }
-  </style>
+        /* Card Hover Animations */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 1rem 2rem rgba(0,0,0,0.15) !important;
+        }
+    </style>
 </head>
-<body class="bg-white text-dark">
+<body class="bg-white text-dark has-custom-cursor position-relative">
 
-  <!-- Custom Cursor Element -->
-  <div id="customCursor" class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"></div>
+    <!-- Custom Cursor Element (Desktop Only) -->
+    <div id="customCursor" class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"></div>
 
-<!-- Navbar -->
+   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
     <div class="container">
       <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
@@ -137,6 +115,7 @@
         </ul>
         <a href="contact.html" class="btn btn-primary rounded-pill px-4 mt-3 mt-lg-0 ms-lg-2">Get Started</a>
       </div>
+      
     </div>
   </nav>
 

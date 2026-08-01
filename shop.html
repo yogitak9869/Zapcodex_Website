@@ -13,28 +13,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- AOS (Animate On Scroll) CSS CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- Standard Arrow -->
-<i class="bi bi-arrow-down"></i>
 
-<!-- Circle Down Arrow -->
-<i class="bi bi-arrow-down-circle"></i>
-
-<!-- Filled Circle Down Arrow -->
-<i class="bi bi-arrow-down-circle-fill"></i>
-
-<!-- Chevron Down -->
-<i class="bi bi-chevron-down"></i>
     <style>
-        /* Custom Hover Zoom Effect for Bootstrap Cards */
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    
+        /* Custom Variables */
+        :root {
+            --bs-primary: #0d6efd;
         }
 
-        /* Navbar Dropdown Hover Behavior for Large Screens */
+        /* Custom Cursor Base Settings */
+        #customCursor {
+            width: 24px; 
+            height: 24px; 
+            top: 0; 
+            left: 0; 
+            z-index: 9999; 
+            transform: translate(-50%, -50%); 
+            transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
+            pointer-events: none;
+        }
+
+        /* Dropdown Hover Effect for Desktop */
         .dropdown-menu .dropdown-item:hover, 
         .dropdown-menu .dropdown-item:focus {
             background-color: var(--bs-primary) !important;
@@ -48,111 +47,78 @@
             }
         }
 
-        /* Custom Interactive Circle Cursor */
-        .custom-cursor {
-            width: 24px;
-            height: 24px;
-            background-color: rgba(13, 110, 253, 0.75);
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.15s ease-out, background-color 0.2s ease, opacity 0.2s ease;
-        }
-
-        .custom-cursor.cursor-hover {
-            transform: translate(-50%, -50%) scale(2.2);
-            background-color: rgba(220, 53, 69, 0.85); /* Danger Red on hover */
-        }
-
-        /* Hero Overlay */
+        /* Custom Hero Overlay & Spacing Adjustments */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/index.jpg') center/cover no-repeat;
-            min-height: 75vh;
+            background: linear-gradient(rgba(13, 110, 253, 0.75), rgba(0, 0, 0, 0.8)), 
+                        url('https://picsum.photos/1920/1080') center/cover no-repeat;
+            min-height: 65vh;
         }
 
-        /* Scroll to Top Floating Button */
-        .scroll-top-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1000;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
+        /* Horizontal Scroll Hide Scrollbar */
+        .horizontal-scroll::-webkit-scrollbar {
             display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: opacity 0.3s ease, transform 0.2s ease;
         }
-        .scroll-top-btn:hover {
-            transform: translateY(-3px);
+        .horizontal-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        /* Social Icons Hover */
-        .social-icon {
-            transition: color 0.2s ease;
+        /* Card Hover Animations */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .social-icon:hover {
-            color: var(--bs-primary) !important;
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 1rem 2rem rgba(0,0,0,0.15) !important;
         }
     </style>
 </head>
-<body class="bg-white text-dark position-relative">
+<body class="bg-white text-dark has-custom-cursor position-relative">
 
-    <!-- Custom Cursor Element (Hidden on Touch/Small Devices) -->
-    <div id="customCursor" class="custom-cursor d-none d-md-block"></div>
+    <!-- Custom Cursor Element (Desktop Only) -->
+    <div id="customCursor" class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"></div>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" class="btn btn-primary scroll-top-btn" aria-label="Scroll to Top">
-        <i class="bi bi-arrow-up fs-5"></i>
-    </button>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
-                <img src="images/logo.jpeg" alt="Zapcodex Technology Logo" height="50" class="rounded">
-                <span class="fs-4">Zapcodex Technology</span>
+   <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
+        <img src="images/logo.jpeg" alt="Zapcodex Technology Logo" height="70" class="rounded">
+        <span>Zapcodex Technology</span>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center fw-semibold">
+          <li class="nav-item me-lg-3">
+            <a class="nav-link text-white active" href="index.html">Home</a>
+          </li>
+          
+          <!-- Dropdown List -->
+          <li class="nav-item dropdown me-lg-3" id="pageDropdownContainer">
+            <a class="nav-link dropdown-toggle text-white active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
             </a>
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center fw-semibold">
-                    <li class="nav-item me-lg-3">
-                        <a class="nav-link text-white active" href="index.html">Home</a>
-                    </li>
-                    
-                    <!-- Dropdown List -->
-                    <li class="nav-item dropdown me-lg-3" id="pageDropdownContainer">
-                        <a class="nav-link dropdown-toggle text-white active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Pages
-                        </a>
-                        <ul class="dropdown-menu bg-white border-0 shadow" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-dark" href="about.html"><i class="bi bi-info-circle me-2 text-primary"></i>About Us</a></li>
-                            <li><a class="dropdown-item text-dark" href="team.html"><i class="bi bi-people me-2 text-primary"></i>Team</a></li>
-                            <li><a class="dropdown-item text-dark" href="services.html"><i class="bi bi-gear me-2 text-primary"></i>Services</a></li>
-                            <li><a class="dropdown-item text-dark" href="portfolio.html"><i class="bi bi-briefcase me-2 text-primary"></i>Portfolio</a></li>
-                        </ul>
-                    </li>
+            <ul class="dropdown-menu bg-white border-0 shadow" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-dark" href="about.html"><i class="bi bi-info-circle me-2"></i>About Us</a></li>
+              <li><a class="dropdown-item text-dark" href="team.html"><i class="bi bi-people me-2"></i>Team</a></li>
+              <li><a class="dropdown-item text-dark" href="services.html"><i class="bi bi-gear me-2"></i>Services</a></li>
+              <li><a class="dropdown-item text-dark" href="portfolio.html"><i class="bi bi-briefcase me-2"></i>Portfolio</a></li>
+            </ul>
+          </li>
 
-                    <li class="nav-item me-lg-3">
-                        <a class="nav-link text-white" href="shop.html">Shop</a>
-                    </li>
-                    <li class="nav-item me-lg-3">
-                        <a class="nav-link text-white" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary rounded-pill px-4 mt-3 mt-lg-0 ms-lg-2">Get Started</a>
-            </div>
-        </div>
-    </nav>
-
+          <li class="nav-item me-lg-3">
+            <a class="nav-link text-white active" href="shop.html">Shop</a>
+          </li>
+          <li class="nav-item me-lg-3">
+            <a class="nav-link text-white active" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary rounded-pill px-4 mt-3 mt-lg-0 ms-lg-2">Get Started</a>
+      </div>
+      
+    </div>
+  </nav>
     <!-- Hero Section -->
     <header class="hero-section position-relative text-white py-5 d-flex align-items-center">
         <div class="container py-5 text-center" data-aos="fade-up" data-aos-duration="1000">
@@ -415,6 +381,16 @@
         </div>
     </footer>
 
+  <!-- Scroll to Top Button -->
+  <button 
+    type="button" 
+    id="scrollTopBtn" 
+    class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3 m-md-4 shadow-lg d-none align-items-center justify-content-center p-0"
+    style="width: 48px; height: 48px; z-index: 1050;" 
+    aria-label="Scroll to top"
+  >
+    <i class="bi bi-arrow-up fs-5"></i>
+  </button>
     <!-- Bootstrap 5 JavaScript Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JavaScript -->
