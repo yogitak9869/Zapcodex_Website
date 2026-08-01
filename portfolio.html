@@ -9,52 +9,6 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <body class="bg-light">
-
-    <!-- Blue Background Cursor Animation Circle -->
-    <div class="cursor-circle" id="cursorCircle"></div>
-
-   <!-- Black Navbar with White Text -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
-  <img src="images/logo.jpeg" alt="Zapcodex Technology Logo" height="70" class="rounded">
-  Zapcodex Technology
-</a>
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center fw-semibold">
-                    <li class="nav-item me-3">
-                        <a class="nav-link text-white active" href="index.html">Home</a>
-                    </li>
-                 
-                    <!-- Dropdown List with Hover Open/Close Behavior -->
-                    <li class="nav-item dropdown me-3" id="pageDropdownContainer">
-                        <a class="nav-link dropdown-toggle text-white active" href="pages.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Page
-                        </a>
-                        <ul class="dropdown-menu bg-white border-0 shadow" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-dark hover-primary" href="about.html"><i class="bi bi-info-circle me-2"></i>About Us</a></li>
-                            <li><a class="dropdown-item text-dark hover-primary" href="team.html"><i class="bi bi-people me-2"></i>Team</a></li>
-                            <li><a class="dropdown-item text-dark hover-primary" href="services.html"><i class="bi bi-gear me-2"></i>Services</a></li>
-                            <li><a class="dropdown-item text-dark hover-primary" href="portfolio.html"><i class="bi bi-briefcase me-2"></i>Portfolio</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item me-3">
-                        <a class="nav-link text-white active" href="shop.html">Shop</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a class="nav-link text-white active" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary rounded-pill px-4 ms-lg-2">Get Started</a>
-            </div>
-        </div>
-    </nav>
-
     <style>
         .dropdown-menu .dropdown-item:hover, 
         .dropdown-menu .dropdown-item:focus {
@@ -69,221 +23,222 @@
                 margin-top: 0;
             }
         }
+
+        /* Footer links style */
+        .footer-link {
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            color: #0d6efd !important;
+            transform: translateX(3px);
+        }
+        .social-icon {
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .social-icon:hover {
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+
+        /* Card Hover Animations */
+        .interactive-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interactive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+        }
     </style>
+</head>
+
+<body class="bg-light">
+
     <!-- Custom Cursor Element -->
-<div 
-  id="customCursor" 
-  class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"
-  style="
-    width: 24px; 
-    height: 24px; 
-    top: 0; 
-    left: 0; 
-    z-index: 99999; 
-    transform: translate(-50%, -50%); 
-    transition: transform 0.15s ease-out, background-color 0.2s, opacity 0.2s;
-    pointer-events: none;
-  "
-></div>
+    <div 
+      id="customCursor" 
+      class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"
+      style="
+        width: 24px; 
+        height: 24px; 
+        top: 0; 
+        left: 0; 
+        z-index: 99999; 
+        transform: translate(-50%, -50%); 
+        transition: transform 0.15s ease-out, background-color 0.2s, opacity 0.2s;
+        pointer-events: none;
+      "
+    ></div>
 
-<!-- Responsive JavaScript Code -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const cursor = document.getElementById('customCursor');
+    <!-- Black Navbar with White Text -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
+                <img src="images/logo.jpeg" alt="Zapcodex Technology Logo" height="50" class="rounded">
+                Zapcodex Technology
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center fw-semibold">
+                    <li class="nav-item me-lg-3">
+                        <a class="nav-link text-white active" href="index.html">Home</a>
+                    </li>
+                    
+                    <!-- Dropdown List with Hover Open/Close Behavior -->
+                    <li class="nav-item dropdown me-lg-3" id="pageDropdownContainer">
+                        <a class="nav-link dropdown-toggle text-white active" href="pages.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu bg-white border-0 shadow" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-dark" href="about.html"><i class="bi bi-info-circle me-2"></i>About Us</a></li>
+                            <li><a class="dropdown-item text-dark" href="team.html"><i class="bi bi-people me-2"></i>Team</a></li>
+                            <li><a class="dropdown-item text-dark" href="services.html"><i class="bi bi-gear me-2"></i>Services</a></li>
+                            <li><a class="dropdown-item text-dark" href="portfolio.html"><i class="bi bi-briefcase me-2"></i>Portfolio</a></li>
+                        </ul>
+                    </li>
 
-    if (!cursor) return;
+                    <li class="nav-item me-lg-3">
+                        <a class="nav-link text-white active" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item me-lg-3">
+                        <a class="nav-link text-white active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary rounded-pill px-4 ms-lg-2 mt-3 mt-lg-0">Get Started</a>
+            </div>
+        </div>
+    </nav>
 
-    // १. माऊसच्या हालचालीनुसार कर्सर हलवणे
-    document.addEventListener('mousemove', function(e) {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-
-    // २. Hover Effect (Event Delegation - हे सर्विस पेजवरील सर्व लिंक्स/बटन्सवर नक्की काम करेल)
-    document.addEventListener('mouseover', function(e) {
-      if (e.target.closest('a, button, input, textarea, select, .btn')) {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
-        cursor.classList.remove('bg-primary');
-        cursor.classList.add('bg-danger');
-      }
-    });
-
-    document.addEventListener('mouseout', function(e) {
-      if (e.target.closest('a, button, input, textarea, select, .btn')) {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursor.classList.remove('bg-danger');
-        cursor.classList.add('bg-primary');
-      }
-    });
-
-    // ३. स्क्रीनच्या बाहेर माऊस गेल्यावर कर्सर लपवणे
-    document.addEventListener('mouseleave', function() {
-      cursor.style.opacity = '0';
-    });
-
-    document.addEventListener('mouseenter', function() {
-      cursor.style.opacity = '1';
-    });
-  });
-</script>
-
-     <!-- Hero Section with Subtle Transparent Blue Overlay -->
-<header class="position-relative text-white py-5 d-flex align-items-center" 
-        style="min-height: 85vh; background: linear-gradient(rgba(10, 34, 64, 0.45), rgba(0, 102, 204, 0.35)), url('images/index.jpg') center/cover no-repeat;">
-    <div class="row justify-content-center">
+    <!-- Hero Section -->
+    <header class="position-relative text-white py-5 d-flex align-items-center" 
+            style="min-height: 85vh; background: linear-gradient(rgba(10, 34, 64, 0.65), rgba(0, 102, 204, 0.45)), url('images/index.jpg') center/cover no-repeat;">
+        <div class="container text-center text-lg-start">
+            <div class="row justify-content-center justify-content-lg-start">
                 <div class="col-lg-8">
                     <h1 class="display-3 fw-bold mb-3">Architecting Next-Gen Digital Products</h1>
-                    <p class="lead mb-0">
+                    <p class="lead mb-4">
                         We deliver world-class IT software solutions, web applications, and digital architectures designed to scale businesses seamlessly across the globe.
-                    </p> 
+                    </p>
+                    <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-4 me-2">Our Work</a>
+                    <a href="about.html" class="btn btn-outline-light btn-lg rounded-pill px-4">Learn More</a>
                 </div>
             </div>
-</header>
-    <!-- Back to Top Button (SVG सह) -->
-<button 
-  type="button" 
-  id="scrollTopBtn" 
-  class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3 m-md-4 shadow-lg d-none align-items-center justify-content-center p-0"
-  style="width: 48px; height: 48px; z-index: 1050;" 
-  aria-label="Scroll to top"
->
-  <!-- Direct SVG Arrow Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
-  </svg>
-</button>
-
-<!-- JavaScript -->
-<script>
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      scrollTopBtn.classList.remove('d-none');
-      scrollTopBtn.classList.add('d-flex');
-    } else {
-      scrollTopBtn.classList.remove('d-flex');
-      scrollTopBtn.classList.add('d-none');
-    }
-  });
-
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-</script>
-  
-<!-- Services Section -->
-<section id="services" class="py-5 bg-white text-dark">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <span class="text-primary text-uppercase fw-semibold tracking-wider small">What We Offer</span>
-            <h2 class="fw-bold display-6 mt-1 text-dark">Our Services</h2>
-            <p class="text-secondary mx-auto" style="max-width: 600px;">
-                End-to-end technical expertise tailored for modern enterprise needs.
-            </p>
         </div>
-        <div class="row g-4">
-            <!-- Service 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
-                            <i class="bi bi-laptop"></i>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-white text-dark">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-primary text-uppercase fw-semibold tracking-wider small">What We Offer</span>
+                <h2 class="fw-bold display-6 mt-1 text-dark">Our Services</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">
+                    End-to-end technical expertise tailored for modern enterprise needs.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3 text-dark">Web Development</h4>
+                            <p class="card-text text-secondary small mb-0">High-performance, responsive web applications built with modern frameworks and resilient backend architectures.</p>
                         </div>
-                        <h4 class="card-title fw-bold mb-3 text-dark">Web Development</h4>
-                        <p class="card-text text-secondary small mb-0">High-performance, responsive web applications built with modern frameworks and resilient backend architectures.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
-                            <i class="bi bi-phone"></i>
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3 text-dark">App Development</h4>
+                            <p class="card-text text-secondary small mb-0">Native and cross-platform mobile solutions delivering fluid user experiences on both iOS and Android platforms.</p>
                         </div>
-                        <h4 class="card-title fw-bold mb-3 text-dark">App Development</h4>
-                        <p class="card-text text-secondary small mb-0">Native and cross-platform mobile solutions delivering fluid user experiences on both iOS and Android platforms.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
-                            <i class="bi bi-palette"></i>
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
+                                <i class="bi bi-palette"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3 text-dark">UI/UX Design</h4>
+                            <p class="card-text text-secondary small mb-0">User-centric interface design and interaction prototyping that turn complex workflows into intuitive products.</p>
                         </div>
-                        <h4 class="card-title fw-bold mb-3 text-dark">UI/UX Design</h4>
-                        <p class="card-text text-secondary small mb-0">User-centric interface design and interaction prototyping that turn complex workflows into intuitive products.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 4 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
-                            <i class="bi bi-cloud-check"></i>
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
+                                <i class="bi bi-cloud-check"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3 text-dark">Cloud Architecture</h4>
+                            <p class="card-text text-secondary small mb-0">Secure AWS and Azure cloud infrastructure, DevOps CI/CD pipelines, and serverless deployment strategies.</p>
                         </div>
-                        <h4 class="card-title fw-bold mb-3 text-dark">Cloud Architecture</h4>
-                        <p class="card-text text-secondary small mb-0">Secure AWS and Azure cloud infrastructure, DevOps CI/CD pipelines, and serverless deployment strategies.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 5 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
-                            <i class="bi bi-graph-up-arrow"></i>
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3 text-dark">Digital Marketing</h4>
+                            <p class="card-text text-secondary small mb-0">Data-driven marketing strategies, SEO optimization, and analytics setups designed to scale user acquisition.</p>
                         </div>
-                        <h4 class="card-title fw-bold mb-3 text-dark">Digital Marketing</h4>
-                        <p class="card-text text-secondary small mb-0">Data-driven marketing strategies, SEO optimization, and analytics setups designed to scale user acquisition.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
-                            <i class="bi bi-shield-check"></i>
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 55px; height: 55px;">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3 text-dark">Cybersecurity</h4>
+                            <p class="card-text text-secondary small mb-0">Comprehensive security audits, vulnerability assessments, and compliance enforcement for web products.</p>
                         </div>
-                        <h4 class="card-title fw-bold mb-3 text-dark">Cybersecurity</h4>
-                        <p class="card-text text-secondary small mb-0">Comprehensive security audits, vulnerability assessments, and compliance enforcement for web products.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <section id="projects" class="py-5 bg-dark text-white">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Featured Projects</h2>
-                <p class="text-body-white">Explore our recent software systems, client builds, and open-source contributions.</p>
+                <p class="text-white-50">Explore our recent software systems, client builds, and open-source contributions.</p>
             </div>
             <div class="row g-4">
                 <!-- Project 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-secondary bg-dark text-light overflow-hidden interactive-card">
-                        <img src="images\app.png" class="card-img-top" alt="Cloud ERP Engine">
+                        <img src="images/app.png" class="card-img-top" alt="Zap-Billing App" style="height: 220px; object-fit: cover;">
                         <div class="card-body d-flex flex-column p-4">
                             <h5 class="card-title fw-bold">Zap-Billing App</h5>
                             <p class="card-text text-body-secondary">Generate digital bills with customizable business logos and terms.</p>
                             <div class="mt-auto pt-3 border-top border-secondary d-flex justify-content-between align-items-center">
                                 <a href="https://oveeracollections.com/" target="_blank" class="btn btn-sm btn-outline-light"><i class="bi bi-github me-1"></i> Code</a>
-                                <a href="https://amanfoodproducts.co.in/" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
+                                <a href="https://amanfoodproducts.co.in/" target="_blank" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -291,13 +246,13 @@
                 <!-- Project 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-secondary bg-dark text-light overflow-hidden interactive-card">
-                        <img src="images\ecommerce.png" class="card-img-top" alt="AI Analytics Suite">
+                        <img src="images/ecommerce.png" class="card-img-top" alt="AI Analytics Suite" style="height: 220px; object-fit: cover;">
                         <div class="card-body d-flex flex-column p-4">
                             <h5 class="card-title fw-bold">AI Analytics Suite</h5>
                             <p class="card-text text-body-secondary">Automatically generate and email PDF invoices as soon as an online order is placed.</p>
                             <div class="mt-auto pt-3 border-top border-secondary d-flex justify-content-between align-items-center">
                                 <a href="https://oveeracollections.com/" target="_blank" class="btn btn-sm btn-outline-light"><i class="bi bi-github me-1"></i> Code</a>
-                                <a href="https://oveeracollections.com/" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
+                                <a href="https://oveeracollections.com/" target="_blank" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -305,13 +260,13 @@
                 <!-- Project 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-secondary bg-dark text-light overflow-hidden interactive-card">
-                        <img src="images\admindashboard.png" class="card-img-top" alt="HealthTech Portal">
+                        <img src="images/admindashboard.png" class="card-img-top" alt="HealthTech Portal" style="height: 220px; object-fit: cover;">
                         <div class="card-body d-flex flex-column p-4">
                             <h5 class="card-title fw-bold">HealthTech Care Portal</h5>
                             <p class="card-text text-body-secondary">Keep patient financial records safe with end-to-end encryption and strict role-based access.</p>
                             <div class="mt-auto pt-3 border-top border-secondary d-flex justify-content-between align-items-center">
                                 <a href="https://github.com" target="_blank" class="btn btn-sm btn-outline-light"><i class="bi bi-github me-1"></i> Code</a>
-                                <a href="https://thepadmavaticlinic.info/" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
+                                <a href="https://thepadmavaticlinic.info/" target="_blank" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -321,349 +276,282 @@
     </section>
 
     <!-- Why Choose Us Section -->
-<section id="why-us" class="py-5 bg-white text-dark">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <span class="text-primary text-uppercase fw-semibold tracking-wider small">Why Partner With Us</span>
-            <h2 class="fw-bold display-6 mt-1 text-dark">Built for Scale & Reliability</h2>
-            <p class="text-secondary mx-auto" style="max-width: 600px;">
-                We deliver robust digital solutions backed by proven software engineering excellence and round-the-clock support.
-            </p>
-        </div>
-        <div class="row g-4 text-center">
-            <!-- Stat 1 -->
-            <div class="col-lg-3 col-6">
-                <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card transition-all shadow-sm">
-                    <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
-                        <i class="bi bi-speedometer2"></i>
-                    </div>
-                    <h3 class="fw-bold display-6 text-dark mb-1">99.9%</h3>
-                    <p class="text-secondary mb-0 small text-uppercase fw-medium">Uptime Guarantee</p>
-                </div>
+    <section id="why-us" class="py-5 bg-white text-dark">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-primary text-uppercase fw-semibold tracking-wider small">Why Partner With Us</span>
+                <h2 class="fw-bold display-6 mt-1 text-dark">Built for Scale & Reliability</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">
+                    We deliver robust digital solutions backed by proven software engineering excellence and round-the-clock support.
+                </p>
             </div>
-            <!-- Stat 2 -->
-            <div class="col-lg-3 col-6">
-                <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card transition-all shadow-sm">
-                    <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
-                        <i class="bi bi-rocket-takeoff"></i>
-                    </div>
-                    <h3 class="fw-bold display-6 text-dark mb-1">50+</h3>
-                    <p class="text-secondary mb-0 small text-uppercase fw-medium">Projects Shipped</p>
-                </div>
-            </div>
-            <!-- Stat 3 -->
-            <div class="col-lg-3 col-6">
-                <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card transition-all shadow-sm">
-                    <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
-                        <i class="bi bi-emoji-smile"></i>
-                    </div>
-                    <h3 class="fw-bold display-6 text-dark mb-1">100%</h3>
-                    <p class="text-secondary mb-0 small text-uppercase fw-medium">Client Satisfaction</p>
-                </div>
-            </div>
-            <!-- Stat 4 -->
-            <div class="col-lg-3 col-6">
-                <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card transition-all shadow-sm">
-                    <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
-                        <i class="bi bi-headset"></i>
-                    </div>
-                    <h3 class="fw-bold display-6 text-dark mb-1">24/7</h3>
-                    <p class="text-secondary mb-0 small text-uppercase fw-medium">Dedicated Support</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Our Process Section -->
-<section id="process" class="py-5 bg-white text-dark border-top border-light-subtle">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <span class="text-primary text-uppercase fw-semibold tracking-wider small">How We Work</span>
-            <h2 class="fw-bold display-6 mt-1 text-dark">Our Development Process</h2>
-            <p class="text-secondary mx-auto" style="max-width: 600px;">
-                A battle-tested execution framework that takes your vision from idea to production-ready application.
-            </p>
-        </div>
-        <div class="row g-4">
-            <!-- Step 1 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 01</span>
-                            <i class="bi bi-compass fs-4 text-secondary"></i>
+            <div class="row g-4 text-center">
+                <!-- Stat 1 -->
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card shadow-sm">
+                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-speedometer2"></i>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">Discovery & Strategy</h5>
-                        <p class="text-secondary small mb-0">Defining product specifications, architecture blueprints, and tech stacks aligned with your goals.</p>
+                        <h3 class="fw-bold display-6 text-dark mb-1">99.9%</h3>
+                        <p class="text-secondary mb-0 small text-uppercase fw-medium">Uptime Guarantee</p>
                     </div>
                 </div>
-            </div>
-            <!-- Step 2 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 02</span>
-                            <i class="bi bi-palette fs-4 text-secondary"></i>
+                <!-- Stat 2 -->
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card shadow-sm">
+                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-rocket-takeoff"></i>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">UI/UX & Design</h5>
-                        <p class="text-secondary small mb-0">Crafting intuitive user journeys, interactive prototypes, and scalable design systems for validation.</p>
+                        <h3 class="fw-bold display-6 text-dark mb-1">50+</h3>
+                        <p class="text-secondary mb-0 small text-uppercase fw-medium">Projects Shipped</p>
                     </div>
                 </div>
-            </div>
-            <!-- Step 3 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 03</span>
-                            <i class="bi bi-code-slash fs-4 text-secondary"></i>
+                <!-- Stat 3 -->
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card shadow-sm">
+                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-emoji-smile"></i>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">Agile Sprints</h5>
-                        <p class="text-secondary small mb-0">Writing clean, test-driven code in rapid iterative cycles with continuous integration.</p>
+                        <h3 class="fw-bold display-6 text-dark mb-1">100%</h3>
+                        <p class="text-secondary mb-0 small text-uppercase fw-medium">Client Satisfaction</p>
                     </div>
                 </div>
-            </div>
-            <!-- Step 4 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 04</span>
-                            <i class="bi bi-cloud-arrow-up fs-4 text-secondary"></i>
+                <!-- Stat 4 -->
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 border border-light-subtle rounded-4 bg-light h-100 interactive-card shadow-sm">
+                        <div class="icon-box mb-3 d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-headset"></i>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">Launch & Scale</h5>
-                        <p class="text-secondary small mb-0">Executing zero-downtime deployments, active infrastructure monitoring, and continuous optimization.</p>
+                        <h3 class="fw-bold display-6 text-dark mb-1">24/7</h3>
+                        <p class="text-secondary mb-0 small text-uppercase fw-medium">Dedicated Support</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Our Process Section -->
-<section id="process" class="py-5 bg-white text-dark">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <span class="text-primary text-uppercase fw-semibold tracking-wider small">How We Work</span>
-            <h2 class="fw-bold display-6 mt-1 text-dark">Our Development Process</h2>
-            <p class="text-secondary mx-auto" style="max-width: 600px;">
-                A streamlined execution model from initial discovery to production deployment.
-            </p>
-        </div>
-        <div class="row g-4">
-            <!-- Step 01 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 01</span>
-                            <i class="bi bi-compass fs-4 text-secondary"></i>
+    </section>
+
+    <!-- Our Process Section -->
+    <section id="process" class="py-5 bg-white text-dark border-top border-light-subtle">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-primary text-uppercase fw-semibold tracking-wider small">How We Work</span>
+                <h2 class="fw-bold display-6 mt-1 text-dark">Our Development Process</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">
+                    A battle-tested execution framework that takes your vision from idea to production-ready application.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 01</span>
+                                <i class="bi bi-compass fs-4 text-secondary"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-2">Discovery & Strategy</h5>
+                            <p class="text-secondary small mb-0">Defining product specifications, architecture blueprints, and tech stacks aligned with your goals.</p>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">Discovery & Strategy</h5>
-                        <p class="text-secondary small mb-0">Defining product specifications, architecture blueprints, and technology stacks tailored to business goals.</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Step 02 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 02</span>
-                            <i class="bi bi-palette fs-4 text-secondary"></i>
+                <!-- Step 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 02</span>
+                                <i class="bi bi-palette fs-4 text-secondary"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-2">UI/UX & Design</h5>
+                            <p class="text-secondary small mb-0">Crafting intuitive user journeys, interactive prototypes, and scalable design systems for validation.</p>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">UI/UX & Prototyping</h5>
-                        <p class="text-secondary small mb-0">Designing interactive wireframes, user journeys, and component design systems for approval.</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Step 03 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 03</span>
-                            <i class="bi bi-code-slash fs-4 text-secondary"></i>
+                <!-- Step 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 03</span>
+                                <i class="bi bi-code-slash fs-4 text-secondary"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-2">Agile Sprints</h5>
+                            <p class="text-secondary small mb-0">Writing clean, test-driven code in rapid iterative cycles with continuous integration.</p>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">Agile Development</h5>
-                        <p class="text-secondary small mb-0">Writing clean, test-driven code in sprint cycles with continuous integration and delivery testing.</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Step 04 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 04</span>
-                            <i class="bi bi-cloud-arrow-up fs-4 text-secondary"></i>
+                <!-- Step 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 border-top border-4 border-primary bg-light text-dark rounded-4 p-2 interactive-card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 fw-bold">Step 04</span>
+                                <i class="bi bi-cloud-arrow-up fs-4 text-secondary"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-2">Launch & Scale</h5>
+                            <p class="text-secondary small mb-0">Executing zero-downtime deployments, active infrastructure monitoring, and continuous optimization.</p>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">Launch & Scaling</h5>
-                        <p class="text-secondary small mb-0">Zero-downtime deployment, infrastructure monitoring, and long-term optimization support.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-   
-   
-                        
-  <!-- Custom CSS (Add to your stylesheet or style tag) -->
-<style>
-  .footer-link {
-    transition: color 0.2s ease, transform 0.2s ease;
-    display: inline-block;
-  }
-  .footer-link:hover {
-    color: #0d6efd !important; /* Primary color hover */
-    transform: translateX(3px);
-  }
-  .social-icon {
-    transition: color 0.2s ease, transform 0.2s ease;
-    display: inline-block;
-  }
-  .social-icon:hover {
-    color: #ffffff !important;
-    transform: translateY(-2px);
-  }
-</style>
+    </section>
 
-<!-- Footer Section -->
-<footer id="contact" class="bg-dark text-white pt-5 pb-4">
-  <div class="container">
-    <div class="row g-4 pb-4">
-      
-      <!-- Column 1: Company Info -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h4 class="fw-bold text-white mb-3 d-flex align-items-center">
-          <img src="images/logo.jpeg" alt="Zapcodex Logo" class="img-fluid me-2" style="max-height: 40px; object-fit: contain;">
-          Zapcodex
-        </h4>
-        <p class="text-white-50 small">
-          Delivering world-class IT software solutions and digital products designed to scale businesses seamlessly globally.
-        </p>
-        <ul class="list-unstyled small text-white-50 mb-0">
-          <li class="mb-2 d-flex align-items-start">
-            <i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i>
-            <span>Zapcodex Technology, Near Bus Stand, Ishwarpur</span>
-          </li>
-          <li class="mb-2 d-flex align-items-center">
-            <i class="bi bi-envelope-fill text-primary me-2"></i>
-            <a href="mailto:info@zapcodex.com" class="text-white-50 text-decoration-none">info@zapcodex.com</a>
-          </li>
-          <li class="d-flex align-items-center">
-            <i class="bi bi-telephone-fill text-primary me-2"></i>
-            <a href="tel:+917028501431" class="text-white-50 text-decoration-none">+91 7028501431</a>
-          </li>
-        </ul>
-      </div>
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+        <div class="container">
+            <div class="row g-4 pb-4">
+                
+                <!-- Column 1: Company Info -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <h4 class="fw-bold text-white mb-3 d-flex align-items-center">
+                        <img src="images/logo.jpeg" alt="Zapcodex Logo" class="img-fluid me-2 rounded" style="max-height: 40px; object-fit: contain;">
+                        Zapcodex
+                    </h4>
+                    <p class="text-white-50 small">
+                        Delivering world-class IT software solutions and digital products designed to scale businesses seamlessly globally.
+                    </p>
+                    <ul class="list-unstyled small text-white-50 mb-0">
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i>
+                            <span>Zapcodex Technology, Near Bus Stand, Ishwarpur</span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="bi bi-envelope-fill text-primary me-2"></i>
+                            <a href="mailto:info@zapcodex.com" class="text-white-50 text-decoration-none">info@zapcodex.com</a>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-telephone-fill text-primary me-2"></i>
+                            <a href="tel:+917028501431" class="text-white-50 text-decoration-none">+91 7028501431</a>
+                        </li>
+                    </ul>
+                </div>
 
-      <!-- Column 2: Quick Links / Services -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h5 class="fw-bold text-white mb-3">Services</h5>
-        <ul class="list-unstyled small mb-0">
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Web Development</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>App Development</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>UI/UX Design</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Digital Marketing</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Cloud Architecture</a></li>
-        </ul>
-      </div>
+                <!-- Column 2: Quick Links -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none footer-link">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none footer-link">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none footer-link">Services</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-white-50 text-decoration-none footer-link">Portfolio</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none footer-link">Contact</a></li>
+                    </ul>
+                </div>
 
-      <!-- Column 3: Location Map -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h5 class="fw-bold text-white mb-3">Our Location</h5>
-        <div class="ratio ratio-16x9 ratio-sm-4x3 rounded overflow-hidden shadow-sm border border-secondary">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.516329368624!2d74.2580398103618!3d17.047378583715393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc175019c552ca1%3A0xe5fd93ee9d356e9b!2sZapcodex!5e0!3m2!1sen!2sin!4v1785473371056!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <!-- Column 3: Services -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h5 class="fw-bold text-white mb-3">Our Services</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none footer-link">Web Development</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none footer-link">App Development</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none footer-link">UI/UX Design</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none footer-link">Cloud Architecture</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none footer-link">Cybersecurity</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter & Social -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h5 class="fw-bold text-white mb-3">Follow Us</h5>
+                    <p class="text-white-50 small">Stay connected with us across our social channels.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-white-50 social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white-50 social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white-50 social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white-50 social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white-50 social-icon"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr class="border-secondary">
+            <div class="row text-center text-md-start align-items-center">
+                <div class="col-md-6 text-white-50 small">
+                    &copy; 2026 Zapcodex Technology. All rights reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end text-white-50 small mt-2 mt-md-0">
+                    <a href="#" class="text-white-50 text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white-50 text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <!-- Column 4: Newsletter -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h5 class="fw-bold text-white mb-3">Newsletter</h5>
-        <p class="text-white-50 small">Subscribe for recent technological developments and service updates.</p>
-        <form onSubmit="return false;">
-          <div class="input-group mb-3">
-            <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" aria-label="Enter your email" required>
-            <button class="btn btn-primary" type="submit">Subscribe</button>
-          </div>
-        </form>
-      </div>
+    <!-- Back to Top Button -->
+    <button 
+      type="button" 
+      id="scrollTopBtn" 
+      class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3 m-md-4 shadow-lg d-none align-items-center justify-content-center p-0"
+      style="width: 48px; height: 48px; z-index: 1050;" 
+      aria-label="Scroll to top"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+      </svg>
+    </button>
 
-    </div>
-
-    <hr class="border-secondary opacity-50 my-3">
-
-    <!-- Bottom Bar: Copyright & Socials -->
-    <div class="row align-items-center pt-2">
-      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-        <p class="mb-0 text-white-50 small">&copy; 2026 Zapcodex Technology. All Rights Reserved.</p>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-        <a href="#" class="text-white-50 me-3 social-icon" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
-        <a href="#" class="text-white-50 me-3 social-icon" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
-        <a href="#" class="text-white-50 me-3 social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-        <a href="#" class="text-white-50 social-icon" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
-    <!-- Fixed Back to Top Button -->
-    <a href="#page-top" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 p-0 d-flex align-items-center justify-content-center shadow" style="width: 48px; height: 48px; z-index: 1030;" aria-label="Back to Top">
-        <i class="bi bi-arrow-up fs-5"></i>
-    </a>
-
-    <!-- Bootstrap 5 JavaScript Bundle -->
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom Circle Cursor Script -->
+    <!-- Unified JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cursor = document.getElementById('customCursor');
-            
-            if (!cursor) return;
+      document.addEventListener('DOMContentLoaded', function() {
+        // 1. Custom Cursor Script
+        const cursor = document.getElementById('customCursor');
+        if (cursor) {
+          document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+          });
 
-            let mouseX = 0, mouseY = 0;
-            let cursorX = 0, cursorY = 0;
-
-            // Track mouse movement smoothly
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-                cursor.style.opacity = '1';
-            });
-
-            // Hide when leaving window
-            document.addEventListener('mouseleave', () => {
-                cursor.style.opacity = '0';
-            });
-
-            // Smooth lag animation loop using requestAnimationFrame
-            function animateCursor() {
-                cursorX += (mouseX - cursorX) * 0.2;
-                cursorY += (mouseY - cursorY) * 0.2;
-                cursor.style.left = `${cursorX}px`;
-                cursor.style.top = `${cursorY}px`;
-                requestAnimationFrame(animateCursor);
+          document.addEventListener('mouseover', function(e) {
+            if (e.target.closest('a, button, input, textarea, select, .btn, .interactive-card')) {
+              cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+              cursor.classList.remove('bg-primary');
+              cursor.classList.add('bg-danger');
             }
-            animateCursor();
+          });
 
-            // Add expandable ring effect on interactive items
-            const hoverTargets = document.querySelectorAll('a, button, .interactive-card, input, .accordion-button');
-            hoverTargets.forEach((target) => {
-                target.addEventListener('mouseenter', () => {
-                    cursor.classList.add('cursor-active');
-                });
-                target.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('cursor-active');
-                });
+          document.addEventListener('mouseout', function(e) {
+            if (e.target.closest('a, button, input, textarea, select, .btn, .interactive-card')) {
+              cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+              cursor.classList.remove('bg-danger');
+              cursor.classList.add('bg-primary');
+            }
+          });
+
+          document.addEventListener('mouseleave', function() {
+            cursor.style.opacity = '0';
+          });
+
+          document.addEventListener('mouseenter', function() {
+            cursor.style.opacity = '1';
+          });
+        }
+
+        // 2. Scroll to Top Script
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+              scrollTopBtn.classList.remove('d-none');
+              scrollTopBtn.classList.add('d-flex');
+            } else {
+              scrollTopBtn.classList.remove('d-flex');
+              scrollTopBtn.classList.add('d-none');
+            }
+          });
+
+          scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
             });
-        });
+          });
+        }
+      });
     </script>
 </body>
 </html>
