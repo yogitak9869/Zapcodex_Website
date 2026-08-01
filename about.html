@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
   <style>
+    /* Prevent horizontal overflow on mobile screen */
+    html, body {
+      overflow-x: hidden;
+    }
+
     /* Dropdown Hover Effect for Desktop */
     .dropdown-menu .dropdown-item:hover, 
     .dropdown-menu .dropdown-item:focus {
@@ -44,6 +49,49 @@
       background: linear-gradient(rgba(13, 110, 253, 0.65), rgba(0, 0, 0, 0.7)), url('images/about.jpg') center/cover no-repeat;
       min-height: 60vh;
     }
+
+    /* Mobile Responsive Custom Tweaks */
+    @media (max-width: 576px) {
+      .navbar-brand {
+        font-size: 1.25rem !important;
+      }
+      .navbar-brand img {
+        height: 45px !important;
+      }
+      .hero-section {
+        min-height: 40vh;
+      }
+      .hero-section h1 {
+        font-size: 2.2rem !important;
+      }
+      .hero-section p {
+        font-size: 0.95rem !important;
+      }
+      .display-6 {
+        font-size: 1.5rem !important;
+      }
+      .display-5 {
+        font-size: 2rem !important;
+      }
+    }
+
+    /* Footer Responsive Hover Links */
+    .footer-link {
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .footer-link:hover {
+      color: #0d6efd !important;
+      transform: translateX(3px);
+    }
+    .social-icon {
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .social-icon:hover {
+      color: #ffffff !important;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body class="bg-white text-dark">
@@ -51,13 +99,13 @@
   <!-- Custom Cursor Element -->
   <div id="customCursor" class="position-fixed rounded-circle bg-primary bg-opacity-75 shadow-lg d-none d-md-block"></div>
 
-  <!-- Navbar -->
+<!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
     <div class="container">
-     <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
-  <img src="images/logo.jpeg" alt="Zapcodex Technology Logo" height="70" class="rounded">
-  Zapcodex Technology
-</a>
+      <a class="navbar-brand fw-bold text-white fs-3 d-inline-flex align-items-center gap-2" href="index.html">
+        <img src="images/logo.jpeg" alt="Zapcodex Technology Logo" height="70" class="rounded">
+        <span>Zapcodex Technology</span>
+      </a>
       <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -93,33 +141,29 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section text-white py-5 text-center position-relative overflow-hidden d-flex align-items-center">
-    <div class="container py-5 my-md-4">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">About Us</h1>
-          <p class="lead animate__animated animate__fadeInUp animate__delay-1s mb-0">
-            We deliver high-performance digital solutions through expert engineering, robust cloud architecture, and strategic consulting.
-          </p> 
+  <header class="position-relative text-white py-5 d-flex align-items-center" 
+            style="min-height: 85vh; background: linear-gradient(rgba(10, 34, 64, 0.45), rgba(0, 102, 204, 0.35)), url('images/index.jpg') center/cover no-repeat;">
+        <div class="container py-5 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="display-3 fw-bold mb-4">Empowering Businesses with Cutting-Edge IT Services</h1>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-4">Start a Project</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-
+    </header>
   <!-- Growth Section -->
   <section id="growth-section" class="py-5 overflow-hidden bg-light">
     <div class="container py-4">
-      <div class="row align-items-center g-5">
+      <div class="row align-items-center g-4 g-lg-5">
         
         <!-- Left Side: Image -->
-        <div class="col-lg-6 animate__animated animate__fadeInLeft">
+        <div class="col-12 col-lg-6 animate__animated animate__fadeInLeft">
           <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-white">
             <img src="images/about1.jpg" alt="Business Growth with Technology" class="img-fluid w-100 object-fit-cover d-block" style="max-height: 450px;">
           </div>
         </div>
 
         <!-- Right Side: Content & Progress Bars -->
-        <div class="col-lg-6 animate__animated animate__fadeInRight">
+        <div class="col-12 col-lg-6 animate__animated animate__fadeInRight">
           <h2 class="display-6 fw-bold mb-3 text-dark">We Increase Business Success With Modern Technology</h2>
           <p class="lead text-secondary fs-6 mb-4">We help enterprises scale operations, automate bottlenecks, and secure cloud infrastructures to ensure long-term profitability.</p>
 
@@ -149,11 +193,11 @@
 
           <!-- Quick Features List -->
           <div class="row g-3 text-dark animate__animated animate__fadeInUp">
-            <div class="col-sm-6 d-flex align-items-center gap-2">
+            <div class="col-12 col-sm-6 d-flex align-items-center gap-2">
               <span class="badge bg-primary text-white rounded-circle p-2"><i class="bi bi-check-lg"></i></span>
               <span class="fw-medium">24/7 Enterprise Support</span>
             </div>
-            <div class="col-sm-6 d-flex align-items-center gap-2">
+            <div class="col-12 col-sm-6 d-flex align-items-center gap-2">
               <span class="badge bg-primary text-white rounded-circle p-2"><i class="bi bi-check-lg"></i></span>
               <span class="fw-medium">Agile Software Delivery</span>
             </div>
@@ -167,10 +211,10 @@
   <!-- Executive Technologies Section -->
   <section id="tech-stack-section" class="py-5 bg-white overflow-hidden">
     <div class="container py-4">
-      <div class="row align-items-stretch g-5">
+      <div class="row align-items-stretch g-4 g-lg-5">
         
         <!-- Left Partition: Tech Cards Grid -->
-        <div class="col-lg-6 animate__animated animate__fadeInLeft">
+        <div class="col-12 col-lg-6 animate__animated animate__fadeInLeft">
           <div class="mb-4">
             <h2 class="fw-bold display-6 text-dark mb-2">
               Executive Technologies To Provide IT Solutions
@@ -178,7 +222,7 @@
           </div>
 
           <div class="row g-3">
-            <div class="col-sm-6 animate__animated animate__fadeInUp">
+            <div class="col-12 col-sm-6 animate__animated animate__fadeInUp">
               <div class="card border-0 shadow-sm p-3 h-100 bg-light rounded-4 text-center">
                 <div class="display-5 mb-2">☁️</div>
                 <h3 class="h6 fw-bold text-dark mb-1">Cloud Computing</h3>
@@ -186,7 +230,7 @@
               </div>
             </div>
 
-            <div class="col-sm-6 animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="col-12 col-sm-6 animate__animated animate__fadeInUp animate__delay-1s">
               <div class="card border-0 shadow-sm p-3 h-100 bg-light rounded-4 text-center">
                 <div class="display-5 mb-2">💻</div>
                 <h3 class="h6 fw-bold text-dark mb-1">ASP.NET & C#</h3>
@@ -194,7 +238,7 @@
               </div>
             </div>
 
-            <div class="col-sm-6 animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="col-12 col-sm-6 animate__animated animate__fadeInUp animate__delay-1s">
               <div class="card border-0 shadow-sm p-3 h-100 bg-light rounded-4 text-center">
                 <div class="display-5 mb-2">🗄️</div>
                 <h3 class="h6 fw-bold text-dark mb-1">SQL Server & DBs</h3>
@@ -202,7 +246,7 @@
               </div>
             </div>
 
-            <div class="col-sm-6 animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="col-12 col-sm-6 animate__animated animate__fadeInUp animate__delay-2s">
               <div class="card border-0 shadow-sm p-3 h-100 bg-light rounded-4 text-center">
                 <div class="display-5 mb-2">⚡</div>
                 <h3 class="h6 fw-bold text-dark mb-1">Modern Web Stacks</h3>
@@ -213,9 +257,9 @@
         </div>
 
         <!-- Right Partition: Image -->
-        <div class="col-lg-6 animate__animated animate__fadeInRight">
-          <div class="h-100 min-vh-25">
-            <img src="images/about3.jpg" alt="Our Technology Expertise" class="img-fluid rounded-4 shadow-lg object-fit-cover w-100 h-100 d-block border-0" style="min-height: 300px;">
+        <div class="col-12 col-lg-6 animate__animated animate__fadeInRight">
+          <div class="h-100">
+            <img src="images/about3.jpg" alt="Our Technology Expertise" class="img-fluid rounded-4 shadow-lg object-fit-cover w-100 h-100 d-block border-0" style="min-height: 250px;">
           </div>
         </div>
 
@@ -234,7 +278,7 @@
       </div>
 
       <div class="row g-4 text-center">
-        <div class="col-md-4 animate__animated animate__zoomIn">
+        <div class="col-12 col-md-4 animate__animated animate__zoomIn">
           <div class="p-4 bg-white rounded-4 border border-light-subtle shadow-sm h-100">
             <div class="badge bg-primary-subtle text-primary p-3 rounded-circle mb-3 fs-3 animate__animated animate__pulse animate__infinite">
               <i class="bi bi-award"></i>
@@ -247,7 +291,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 animate__animated animate__zoomIn animate__delay-1s">
+        <div class="col-12 col-md-4 animate__animated animate__zoomIn animate__delay-1s">
           <div class="p-4 bg-white rounded-4 border border-light-subtle shadow-sm h-100">
             <div class="badge bg-primary-subtle text-primary p-3 rounded-circle mb-3 fs-3 animate__animated animate__pulse animate__infinite">
               <i class="bi bi-check-circle"></i>
@@ -260,7 +304,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 animate__animated animate__zoomIn animate__delay-2s">
+        <div class="col-12 col-md-4 animate__animated animate__zoomIn animate__delay-2s">
           <div class="p-4 bg-white rounded-4 border border-light-subtle shadow-sm h-100">
             <div class="badge bg-primary-subtle text-primary p-3 rounded-circle mb-3 fs-3 animate__animated animate__pulse animate__infinite">
               <i class="bi bi-emoji-smile"></i>
@@ -277,11 +321,11 @@
       <!-- Banner -->
       <div class="mt-5 p-4 bg-primary text-white rounded-4 shadow-lg text-center bg-gradient animate__animated animate__flipInX">
         <div class="row align-items-center g-3">
-          <div class="col-lg-8 text-lg-start">
+          <div class="col-12 col-lg-8 text-center text-lg-start">
             <h4 class="fw-bold mb-1">Ready To Build Your Next Big IT Solution?</h4>
             <p class="mb-0 text-white-50">Let's turn your business requirements into scalable, enterprise-grade software.</p>
           </div>
-          <div class="col-lg-4 text-lg-end">
+          <div class="col-12 col-lg-4 text-center text-lg-end">
             <a href="contact.html" class="btn btn-light text-primary fw-bold rounded-pill px-4 py-2 shadow-sm">
               Get In Touch
             </a>
@@ -301,7 +345,7 @@
 
       <div class="row g-4 justify-content-center">
         <!-- Lead 1 -->
-        <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp">
+        <div class="col-12 col-md-6 col-lg-4 animate__animated animate__fadeInUp">
           <div class="card border-0 shadow-sm text-center p-3 h-100 bg-light rounded-4">
             <div class="card-body">
               <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fs-2 fw-bold mb-3 shadow" style="width: 80px; height: 80px;">AJ</div>
@@ -313,7 +357,7 @@
         </div>
 
         <!-- Lead 2 -->
-        <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="col-12 col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-1s">
           <div class="card border-0 shadow-sm text-center p-3 h-100 bg-light rounded-4">
             <div class="card-body">
               <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center fs-2 fw-bold mb-3 shadow" style="width: 80px; height: 80px;">SM</div>
@@ -325,7 +369,7 @@
         </div>
 
         <!-- Lead 3 -->
-        <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="col-12 col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-2s">
           <div class="card border-0 shadow-sm text-center p-3 h-100 bg-light rounded-4">
             <div class="card-body">
               <div class="rounded-circle bg-info text-white d-inline-flex align-items-center justify-content-center fs-2 fw-bold mb-3 shadow" style="width: 80px; height: 80px;">DR</div>
@@ -337,7 +381,7 @@
         </div>
 
         <!-- Lead 4 -->
-        <div class="col-lg-6 col-md-6 animate__animated animate__fadeInUp">
+        <div class="col-12 col-md-6 animate__animated animate__fadeInUp">
           <div class="card border-0 shadow-sm text-center p-3 h-100 bg-light rounded-4">
             <div class="card-body">
               <div class="rounded-circle bg-warning text-dark d-inline-flex align-items-center justify-content-center fs-2 fw-bold mb-3 shadow" style="width: 80px; height: 80px;">EP</div>
@@ -349,7 +393,7 @@
         </div>
 
         <!-- Lead 5 -->
-        <div class="col-lg-6 col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="col-12 col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
           <div class="card border-0 shadow-sm text-center p-3 h-100 bg-light rounded-4">
             <div class="card-body">
               <div class="rounded-circle bg-dark text-white d-inline-flex align-items-center justify-content-center fs-2 fw-bold mb-3 shadow" style="width: 80px; height: 80px;">MK</div>
@@ -363,107 +407,86 @@
     </div>
   </section>
 
- 
-<!-- Custom CSS (Add to your stylesheet or style tag) -->
-<style>
-  .footer-link {
-    transition: color 0.2s ease, transform 0.2s ease;
-    display: inline-block;
-  }
-  .footer-link:hover {
-    color: #0d6efd !important; /* Primary color hover */
-    transform: translateX(3px);
-  }
-  .social-icon {
-    transition: color 0.2s ease, transform 0.2s ease;
-    display: inline-block;
-  }
-  .social-icon:hover {
-    color: #ffffff !important;
-    transform: translateY(-2px);
-  }
-</style>
+  <!-- Footer Section -->
+  <footer id="contact" class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        
+        <!-- Column 1: Company Info -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <h4 class="fw-bold text-white mb-3 d-flex align-items-center">
+            <img src="images/logo.jpeg" alt="Zapcodex Logo" class="img-fluid me-2" style="max-height: 70px; object-fit: contain;">
+            Zapcodex
+          </h4>
+          <p class="text-white-50 small">
+            Delivering world-class IT software solutions and digital products designed to scale businesses seamlessly globally.
+          </p>
+          <ul class="list-unstyled small text-white-50 mb-0">
+            <li class="mb-2 d-flex align-items-start">
+              <i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i>
+              <span>Zapcodex Technology, Near Bus Stand, Ishwarpur</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-envelope-fill text-primary me-2"></i>
+              <a href="mailto:info@zapcodex.com" class="text-white-50 text-decoration-none text-break">info@zapcodex.com</a>
+            </li>
+            <li class="d-flex align-items-center">
+              <i class="bi bi-telephone-fill text-primary me-2"></i>
+              <a href="tel:+917028501431" class="text-white-50 text-decoration-none">+91 7028501431</a>
+            </li>
+          </ul>
+        </div>
 
-<!-- Footer Section -->
-<footer id="contact" class="bg-dark text-white pt-5 pb-4">
-  <div class="container">
-    <div class="row g-4 pb-4">
-      
-      <!-- Column 1: Company Info -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h4 class="fw-bold text-white mb-3 d-flex align-items-center">
-          <img src="images/logo.jpeg" alt="Zapcodex Logo" class="img-fluid me-2" style="max-height: 70px; object-fit: contain;">
-          Zapcodex
-        </h4>
-        <p class="text-white-50 small">
-          Delivering world-class IT software solutions and digital products designed to scale businesses seamlessly globally.
-        </p>
-        <ul class="list-unstyled small text-white-50 mb-0">
-          <li class="mb-2 d-flex align-items-start">
-            <i class="bi bi-geo-alt-fill text-primary me-2 mt-1"></i>
-            <span>Zapcodex Technology, Near Bus Stand, Ishwarpur</span>
-          </li>
-          <li class="mb-2 d-flex align-items-center">
-            <i class="bi bi-envelope-fill text-primary me-2"></i>
-            <a href="mailto:info@zapcodex.com" class="text-white-50 text-decoration-none">info@zapcodex.com</a>
-          </li>
-          <li class="d-flex align-items-center">
-            <i class="bi bi-telephone-fill text-primary me-2"></i>
-            <a href="tel:+917028501431" class="text-white-50 text-decoration-none">+91 7028501431</a>
-          </li>
-        </ul>
+        <!-- Column 2: Quick Links / Services -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <h5 class="fw-bold text-white mb-3">Services</h5>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Web Development</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>App Development</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>UI/UX Design</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Digital Marketing</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Cloud Architecture</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Location Map -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <h5 class="fw-bold text-white mb-3">Our Location</h5>
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm border border-secondary">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.516329368624!2d74.2580398103618!3d17.047378583715393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc175019c552ca1%3A0xe5fd93ee9d356e9b!2sZapcodex!5e0!3m2!1sen!2sin!4v1785473371056!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <h5 class="fw-bold text-white mb-3">Newsletter</h5>
+          <p class="text-white-50 small">Subscribe for recent technological developments and service updates.</p>
+          <form onSubmit="return false;">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" aria-label="Enter your email" required>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
       </div>
 
-      <!-- Column 2: Quick Links / Services -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h5 class="fw-bold text-white mb-3">Services</h5>
-        <ul class="list-unstyled small mb-0">
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Web Development</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>App Development</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>UI/UX Design</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Digital Marketing</a></li>
-          <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link"><i class="bi bi-chevron-right text-primary me-1"></i>Cloud Architecture</a></li>
-        </ul>
-      </div>
+      <hr class="border-secondary opacity-50 my-3">
 
-      <!-- Column 3: Location Map -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h5 class="fw-bold text-white mb-3">Our Location</h5>
-        <div class="ratio ratio-16x9 ratio-sm-4x3 rounded overflow-hidden shadow-sm border border-secondary">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.516329368624!2d74.2580398103618!3d17.047378583715393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc175019c552ca1%3A0xe5fd93ee9d356e9b!2sZapcodex!5e0!3m2!1sen!2sin!4v1785473371056!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <!-- Bottom Bar: Copyright & Socials -->
+      <div class="row align-items-center pt-2">
+        <div class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <p class="mb-0 text-white-50 small">&copy; 2026 Zapcodex Technology. All Rights Reserved.</p>
+        </div>
+        <div class="col-12 col-md-6 text-center text-md-end">
+          <a href="#" class="text-white-50 me-3 social-icon" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="#" class="text-white-50 me-3 social-icon" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+          <a href="#" class="text-white-50 me-3 social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+          <a href="#" class="text-white-50 social-icon" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
         </div>
       </div>
-
-      <!-- Column 4: Newsletter -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h5 class="fw-bold text-white mb-3">Newsletter</h5>
-        <p class="text-white-50 small">Subscribe for recent technological developments and service updates.</p>
-        <form onSubmit="return false;">
-          <div class="input-group mb-3">
-            <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" aria-label="Enter your email" required>
-            <button class="btn btn-primary" type="submit">Subscribe</button>
-          </div>
-        </form>
-      </div>
-
     </div>
-
-    <hr class="border-secondary opacity-50 my-3">
-
-    <!-- Bottom Bar: Copyright & Socials -->
-    <div class="row align-items-center pt-2">
-      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-        <p class="mb-0 text-white-50 small">&copy; 2026 Zapcodex Technology. All Rights Reserved.</p>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-        <a href="#" class="text-white-50 me-3 social-icon" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
-        <a href="#" class="text-white-50 me-3 social-icon" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
-        <a href="#" class="text-white-50 me-3 social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-        <a href="#" class="text-white-50 social-icon" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- Back to Top Button -->
   <button 
